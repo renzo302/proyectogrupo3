@@ -1,0 +1,59 @@
+
+
+.layout{
+    font: 1em sans-serif;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    height: 30px;
+    justify-content: center;
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+}
+nav div{
+    display: contents;
+}
+.todo{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    padding: 10px;
+    margin: 10px;
+}
+.todo h4 {
+    padding: 10px;
+    align-items: start;
+}
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 500px;
+    justify-content: center;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    height: 30px;
+
+}

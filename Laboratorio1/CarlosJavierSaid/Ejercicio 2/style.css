@@ -1,0 +1,15 @@
+.contenedor{
+     display:flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     background-color: black;
+     padding: 20px;
+     border-radius: 10px;
+}
+.caja{
+     background-color: white;
+     padding: 10px;
+     border-radius: 10px;
+
+}
