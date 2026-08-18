@@ -6,7 +6,7 @@
     --color-text: #172033;
     --color-muted: #5b667a;
     --color-surface: #ffffff;
-    --color-soft: #eef6ff;
+    --color-soft:  hwb(214 53% 9% / 0.81);
     --color-border: #d8e4f0;
     --shadow: 0 1.25rem 3.5rem rgb(8 55 103 / 14%);
     --radius: 1.25rem;
