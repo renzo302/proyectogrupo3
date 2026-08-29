@@ -101,7 +101,7 @@
   overflow: hidden;
   background:
     linear-gradient(120deg, rgba(7, 11, 19, 0.9), rgba(7, 11, 19, 0.4)),
-    url("https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1800&q=80") center/cover no-repeat;
+    url("../img/banners/hero-gamehub.jpg") center/cover no-repeat;
 }
 
 .home-hero::before {
