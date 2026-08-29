@@ -1,0 +1,149 @@
+.catalogo-main {
+  padding: 4rem 0 6rem;
+}
+
+.catalogo-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.catalogo-header h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+  margin-bottom: 0.5rem;
+}
+
+.catalogo-header p {
+  color: var(--color-muted);
+}
+
+/* --- Filtros (Flexbox) --- */
+.catalogo-filtros {
+  display: flex;
+  flex-wrap: wrap; /* Distribuye los botones en otra línea si falta espacio en móviles[cite: 2] */
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.catalogo-btn-filtro {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.25s ease;
+}
+
+.catalogo-btn-filtro:hover {
+  border-color: var(--color-secondary);
+  background: rgba(37, 208, 255, 0.1);
+}
+
+.catalogo-btn-filtro.is-active {
+  background: var(--color-primary-strong);
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(124, 92, 255, 0.3);
+}
+
+/* --- Cuadrícula (CSS Grid) --- */
+.catalogo-grid {
+  display: grid;
+  /* Colección intrínseca: Las columnas se crean automáticamente según el espacio[cite: 1] */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 1.5rem;
+}
+
+/* --- Tarjeta del Catálogo (Flexbox anidado) --- */
+.catalogo-card {
+  display: flex;
+  flex-direction: column; /* Eje principal vertical para la tarjeta[cite: 2] */
+  min-height: 100%; /* Las tarjetas se estiran (stretch) para igualar sus alturas[cite: 2] */
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(21, 31, 50, 0.96), rgba(9, 15, 27, 0.96));
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.catalogo-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+}
+
+.catalogo-card__image {
+  position: relative;
+  overflow: hidden;
+}
+
+.catalogo-card__image img {
+  width: 100%;
+  aspect-ratio: 16 / 10; /* Multimedia responsiva con proporción fija*/
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.catalogo-card:hover .catalogo-card__image img {
+  transform: scale(1.05);
+}
+
+/* Badge reutilizado de home.css pero reposicionado */
+.catalogo-card__image .home-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+}
+
+.catalogo-card__favorite {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  background: rgba(8, 13, 23, 0.75);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.catalogo-card__favorite:hover {
+  background: rgba(255, 184, 77, 0.18);
+  transform: scale(1.1);
+}
+
+.catalogo-card__content {
+  display: flex;
+  flex: 1; /* Ocupa el espacio sobrante en la tarjeta */
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+.catalogo-card__content h3 {
+  font-size: 1.2rem;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.catalogo-card__rating {
+  color: #fbbf24;
+  font-size: 0.85rem;
+}
+
+.catalogo-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* el precio y botón siempre abajo*/
+  padding-top: 1.2rem;
+}
+
+.catalogo-card__bottom strong {
+  font-size: 1.5rem;
+  letter-spacing: -0.05em;
+  color: var(--color-text);
+}

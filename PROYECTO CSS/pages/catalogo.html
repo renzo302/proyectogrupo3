@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explora el catálogo completo de videojuegos en GAMEHUB." />
+    <title>GAMEHUB | Catálogo</title>
+    
+    <!-- Enlazamos la base del equipo y tu módulo -->
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/home.css" />
+    <link rel="stylesheet" href="../css/catalogo.css" />
+  </head>
+  <body>
+    <!-- HEADER RECICLADO -->
+    <header class="home-header">
+      <div class="home-shell home-header__inner">
+        <a href="../index.html" class="home-brand" aria-label="Ir al inicio de GAMEHUB">
+          <span class="home-brand__mark">G</span>
+          <span>GAMEHUB</span>
+        </a>
+
+        <nav class="home-nav" aria-label="Navegación principal">
+          <a href="../index.html">Inicio</a>
+          <a href="catalogo.html" class="is-active">Catálogo</a>
+          <a href="busqueda.html">Buscar</a>
+          <a href="favoritos.html">Favoritos</a>
+        </nav>
+
+        <div class="home-header__actions">
+          <button class="home-menu-toggle" type="button" aria-label="Abrir menú">☰</button>
+          <a class="home-btn home-btn--ghost" href="perfil.html">Perfil</a>
+          <a class="home-btn home-btn--primary" href="carrito.html">Carrito</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- MÓDULO CATÁLOGO -->
+    <main class="catalogo-main">
+      <div class="home-shell">
+        
+        <header class="catalogo-header">
+          <h1>Nuestro Catálogo</h1>
+          <p>Filtra y descubre los mejores títulos disponibles.</p>
+        </header>
+
+        <!-- Filtros de Categorías con data-filter -->
+        <nav class="catalogo-filtros" aria-label="Filtrar por género">
+          <button class="catalogo-btn-filtro is-active" data-filter="todos">Todos</button>
+          <button class="catalogo-btn-filtro" data-filter="accion">Acción</button>
+          <button class="catalogo-btn-filtro" data-filter="rpg">RPG</button>
+          <button class="catalogo-btn-filtro" data-filter="terror">Terror</button>
+          <button class="catalogo-btn-filtro" data-filter="deportes">Deportes</button>
+        </nav>
+
+        <!-- Grid de Productos -->
+        <section class="catalogo-grid" aria-label="Lista de videojuegos">
+          
+          <!-- Tarjeta RPG -->
+          <article class="catalogo-card" data-category="rpg">
+            <div class="catalogo-card__image">
+              <span class="home-badge">RPG</span>
+              <img src="../img/games/witcher-3.jpg" alt="Portada de The Witcher 3" loading="lazy" />
+              <button class="catalogo-card__favorite" type="button" aria-label="Añadir a favoritos">♡</button>
+            </div>
+            <div class="catalogo-card__content">
+              <h3>The Witcher 3</h3>
+              <div class="catalogo-card__rating" aria-label="5 estrellas">★★★★★</div>
+              <div class="catalogo-card__bottom">
+                <strong>$39.00</strong>
+                <button class="home-btn home-btn--primary home-btn--small" type="button">Añadir</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta Acción -->
+          <article class="catalogo-card" data-category="accion">
+            <div class="catalogo-card__image">
+              <span class="home-badge">Acción</span>
+              <img src="../img/games/cyberpunk-2077.jpg" alt="Portada de Cyberpunk 2077" loading="lazy" />
+              <button class="catalogo-card__favorite" type="button" aria-label="Añadir a favoritos">♡</button>
+            </div>
+            <div class="catalogo-card__content">
+              <h3>Cyberpunk 2077</h3>
+              <div class="catalogo-card__rating" aria-label="4.9 estrellas">★★★★☆</div>
+              <div class="catalogo-card__bottom">
+                <strong>$49.00</strong>
+                <button class="home-btn home-btn--primary home-btn--small" type="button">Añadir</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta Deportes -->
+          <article class="catalogo-card" data-category="deportes">
+            <div class="catalogo-card__image">
+              <span class="home-badge">Deportes</span>
+              <img src="../img/games/fifa-24.jpg" alt="Portada de FIFA 24" loading="lazy" />
+              <button class="catalogo-card__favorite" type="button" aria-label="Añadir a favoritos">♡</button>
+            </div>
+            <div class="catalogo-card__content">
+              <h3>EA Sports FC 24</h3>
+              <div class="catalogo-card__rating" aria-label="4.5 estrellas">★★★★☆</div>
+              <div class="catalogo-card__bottom">
+                <strong>$29.00</strong>
+                <button class="home-btn home-btn--primary home-btn--small" type="button">Añadir</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Tarjeta Terror -->
+          <article class="catalogo-card" data-category="terror">
+            <div class="catalogo-card__image">
+              <span class="home-badge">Terror</span>
+              <!-- Asegúrate de tener esta imagen en tu carpeta img/games/ -->
+              <img src="../img/games/images.jpg" alt="Portada de Resident Evil" loading="lazy" />
+              <button class="catalogo-card__favorite" type="button" aria-label="Añadir a favoritos">♡</button>
+            </div>
+            <div class="catalogo-card__content">
+              <h3>Resident Evil 4</h3>
+              <div class="catalogo-card__rating" aria-label="5 estrellas">★★★★★</div>
+              <div class="catalogo-card__bottom">
+                <strong>$39.99</strong>
+                <button class="home-btn home-btn--primary home-btn--small" type="button">Añadir</button>
+              </div>
+            </div>
+          </article>
+
+        </section>
+      </div>
+    </main>
+
+    <!-- FOOTER RECICLADO -->
+    <footer class="home-footer">
+      <div class="home-shell">
+        <div class="home-footer__top">
+          <div class="home-footer__brand">
+            <a href="../index.html" class="home-brand" aria-label="GAMEHUB inicio">
+              <span class="home-brand__mark">G</span>
+              <span>GAMEHUB</span>
+            </a>
+            <p>Tu universo de videojuegos.</p>
+          </div>
+
+          <div class="home-footer__columns">
+            <div>
+              <h3>GameHub</h3>
+              <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="catalogo.html">Catálogo</a></li>
+                <li><a href="ofertas.html">Ofertas</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Soporte</h3>
+              <ul>
+                <li><a href="#">Centro de ayuda</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Política de devoluciones</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Comunidad</h3>
+              <ul>
+                <li><a href="#">Foro</a></li>
+                <li><a href="#">Eventos</a></li>
+                <li><a href="#">Noticias</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Redes sociales</h3>
+              <ul>
+                <li><a href="#">Discord</a></li>
+                <li><a href="#">X / Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="home-footer__bottom">
+          <span>© 2026 GAMEHUB. Todos los derechos reservados.</span>
+          <div class="home-footer__links">
+            <a href="#">Términos</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Cookies</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Conexión con el archivo JavaScript -->
+    <script src="../js/catalogo.js"></script>
+  </body>
+</html>
