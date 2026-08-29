@@ -1,362 +1,378 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="GAMEHUB: una tienda online de videojuegos con ofertas, novedades y juegos destacados."
-    />
-    <title>GAMEHUB | Inicio</title>
-    <link rel="stylesheet" href="css/global.css" />
-    <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="pages/catalogo.html" />
-    
-  </head>
-  <body>
-    <header class="home-header">
-      <div class="home-shell home-header__inner">
-        <a href="index.html" class="home-brand" aria-label="Ir al inicio de GAMEHUB">
-          <span class="home-brand__mark">G</span>
-          <span>GAMEHUB</span>
-        </a>
 
-        <nav class="home-nav" aria-label="Navegación principal">
-          <a href="index.html" class="is-active">Inicio</a>
-          <a href="pages/catalogo.html">Catálogo</a>
-          <a href="ofertas.html">Ofertas</a>
-          <a href="favoritos.html">Favoritos</a>
-          <a href="carrito.html">Carrito</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="GAMEHUB: una tienda online de videojuegos con ofertas, novedades y juegos destacados." />
+  <title>GAMEHUB | Inicio</title>
+  <link rel="stylesheet" href="css/global.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="pages/catalogo.html" />
 
-        <div class="home-header__actions">
-          <button class="home-menu-toggle" type="button" aria-label="Abrir menú">☰</button>
-          <a class="home-btn home-btn--ghost" href="perfil.html">Perfil</a>
-          <a class="home-btn home-btn--primary" href="carrito.html">Carrito</a>
-        </div>
+</head>
+
+<body>
+  <header class="home-header">
+    <div class="home-shell home-header__inner">
+      <a href="index.html" class="home-brand" aria-label="Ir al inicio de GAMEHUB">
+        <span class="home-brand__mark">G</span>
+        <span>GAMEHUB</span>
+      </a>
+
+      <nav class="home-nav" aria-label="Navegación principal">
+        <a href="index.html" class="is-active">Inicio</a>
+        <a href="pages/catalogo.html">Catálogo</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="/PROYECTO CSS/pages/favoritos.html">Favoritos</a>
+        <a href="carrito.html">Carrito</a>
+      </nav>
+
+      <div class="home-header__actions">
+        <button class="home-menu-toggle" type="button" aria-label="Abrir menú">☰</button>
+        <a class="home-btn home-btn--ghost" href="perfil.html">Perfil</a>
+        <a class="home-btn home-btn--primary" href="carrito.html">Carrito</a>
       </div>
-    </header>
+    </div>
+  </header>
 
-    <main>
-      <section class="home-hero" aria-label="Sección principal del inicio">
-        <div class="home-shell home-hero__content">
-          <div class="home-hero__copy">
-            <p class="home-kicker">NUEVA TEMPORADA</p>
-            <h1>Tu próxima aventura empieza aquí.</h1>
-            <p class="home-hero__text">
-              Descubre mundos épicos, historias absorbentes y mejores ofertas en una
-              experiencia gaming diseñada para verdaderos jugadores.
-            </p>
+  <main>
+    <section class="home-hero" aria-label="Sección principal del inicio">
+      <div class="home-shell home-hero__content">
+        <div class="home-hero__copy">
+          <p class="home-kicker">NUEVA TEMPORADA</p>
+          <h1>Tu próxima aventura empieza aquí.</h1>
+          <p class="home-hero__text">
+            Descubre mundos épicos, historias absorbentes y mejores ofertas en una
+            experiencia gaming diseñada para verdaderos jugadores.
+          </p>
 
-            <div class="home-hero__actions">
-              <a href="catalogo.html" class="home-btn home-btn--primary home-btn--large">Explorar juegos</a>
-              <a href="ofertas.html" class="home-btn home-btn--secondary home-btn--large">Ver ofertas</a>
+          <div class="home-hero__actions">
+            <a href="/PROYECTO CSS/pages/catalogo.html" class="home-btn home-btn--primary home-btn--large">Explorar
+              juegos</a>
+            <a href="ofertas.html" class="home-btn home-btn--secondary home-btn--large">Ver ofertas</a>
+          </div>
+
+          <ul class="home-hero__stats" aria-label="Estadísticas importantes">
+            <li>
+              <strong>150K+</strong>
+              <span>Jugadores</span>
+            </li>
+            <li>
+              <strong>1.2K</strong>
+              <span>Juegos</span>
+            </li>
+            <li>
+              <strong>4.9/5</strong>
+              <span>Valoración</span>
+            </li>
+          </ul>
+        </div>
+
+        <aside class="home-hero__panel" aria-label="Juego destacado">
+          <div class="home-hero__panel-top">
+            <span class="home-badge home-badge--new">Top venta</span>
+            <button class="home-favorite-button" type="button" aria-label="Añadir a favoritos">♥</button>
+          </div>
+
+          <div class="home-hero__panel-image">
+            <img src="img/games/cyberpunk-2077.jpg" alt="Portada del juego destacado Cyberpunk 2077" />
+          </div>
+
+          <div class="home-hero__panel-body">
+            <div class="home-game-meta">
+              <span>RPG</span>
+              <span>PS5</span>
             </div>
 
-            <ul class="home-hero__stats" aria-label="Estadísticas importantes">
-              <li>
-                <strong>150K+</strong>
-                <span>Jugadores</span>
-              </li>
-              <li>
-                <strong>1.2K</strong>
-                <span>Juegos</span>
-              </li>
-              <li>
-                <strong>4.9/5</strong>
-                <span>Valoración</span>
-              </li>
+            <h2>Cyberpunk 2077</h2>
+            <div class="home-hero__rating" aria-label="Calificación 4.9 estrellas">★ 4.9</div>
+
+            <div class="home-price-row">
+              <span class="home-price-label">Desde</span>
+              <strong>$59.99</strong>
+              <span class="home-price-old">$79.99</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="home-featured" aria-labelledby="featured-title">
+      <div class="home-shell">
+        <div class="home-section-heading">
+          <div>
+            <p class="home-section-tag">Colección</p>
+            <h2 id="featured-title">Juegos destacados</h2>
+          </div>
+          <a href="/PROYECTO CSS/pages/catalogo.html">Ver catálogo</a>
+        </div>
+
+        <div class="home-featured__grid">
+          <article class="game-card" aria-label="Juego destacado Minecraft">
+            <div class="game-card__image">
+              <img src="img/games/minecraft.jpg" alt="Portada de Minecraft" />
+              <button class="game-card__favorite" type="button" aria-label="Añadir Minecraft a favoritos">♡</button>
+            </div>
+            <div class="game-card__content">
+              <div class="game-card__meta">
+                <span>Sandbox</span>
+                <span>PC</span>
+              </div>
+              <h3>Minecraft</h3>
+              <div class="game-card__rating">★ 4.9</div>
+              <div class="game-card__bottom">
+                <strong>$29.99</strong>
+                <div class="game-card__buttons">
+                  <button class="game-card__button game-card__button--buy" type="button">Comprar</button>
+                  <a href="pages/detalles/detalle-minecraft.html" class="game-card__button game-card__button--view">Ver
+                    más</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card" aria-label="Juego destacado Fortnite">
+            <div class="game-card__image">
+              <img src="img/games/fortnite.jpg" alt="Portada de Fortnite" />
+              <button class="game-card__favorite" type="button" aria-label="Añadir Fortnite a favoritos">♡</button>
+            </div>
+            <div class="game-card__content">
+              <div class="game-card__meta">
+                <span>Battle Royale</span>
+                <span>Xbox</span>
+              </div>
+              <h3>Fortnite</h3>
+              <div class="game-card__rating">★ 4.8</div>
+              <div class="game-card__bottom">
+                <strong>$0.00</strong>
+                <div class="game-card__buttons">
+                  <button class="game-card__button game-card__button--buy" type="button">Comprar</button>
+                  <a href="pages/detalles/detalle-fortnite.html" class="game-card__button game-card__button--view">Ver
+                    más</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card" aria-label="Juego destacado The Witcher 3">
+            <div class="game-card__image">
+              <img src="img/games/witcher-3.jpg" alt="Portada de The Witcher 3" />
+              <button class="game-card__favorite" type="button" aria-label="Añadir The Witcher 3 a favoritos">♡</button>
+            </div>
+            <div class="game-card__content">
+              <div class="game-card__meta">
+                <span>RPG</span>
+                <span>PC</span>
+              </div>
+              <h3>The Witcher 3</h3>
+              <div class="game-card__rating">★ 4.9</div>
+              <div class="game-card__bottom">
+                <strong>$39.99</strong>
+                <div class="game-card__buttons">
+                  <button class="game-card__button game-card__button--buy" type="button">Comprar</button>
+                  <a href="pages/detalles/detalle-witcher.html" class="game-card__button game-card__button--view">Ver
+                    más</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="game-card" aria-label="Juego destacado Apex Legends">
+            <div class="game-card__image">
+              <img src="img/games/apex-legends.jpg" alt="Portada de Apex Legends" />
+              <button class="game-card__favorite" type="button" aria-label="Añadir Apex Legends a favoritos">♡</button>
+            </div>
+            <div class="game-card__content">
+              <div class="game-card__meta">
+                <span>FPS</span>
+                <span>PS5</span>
+              </div>
+              <h3>Apex Legends</h3>
+              <div class="game-card__rating">★ 4.7</div>
+              <div class="game-card__bottom">
+                <strong>$0.00</strong>
+                <div class="game-card__buttons">
+                  <button class="game-card__button game-card__button--buy" type="button">Comprar</button>
+                  <a href="pages/detalles/detalle-apex.html" class="game-card__button game-card__button--view">Ver
+                    más</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-offers" aria-labelledby="offers-title">
+      <div class="home-shell">
+        <div class="home-section-heading">
+          <div>
+            <p class="home-section-tag">Promociones</p>
+            <h2 id="offers-title">Ofertas especiales</h2>
+          </div>
+          <a href="ofertas.html">Ver todas</a>
+        </div>
+
+        <div class="home-offers__grid">
+          <article class="offer-card" aria-label="Oferta del juego Call of Duty">
+            <span class="offer-card__badge">-35%</span>
+            <img src="img/games/call-of-duty.jpg" alt="Portada de Call of Duty" />
+            <div class="offer-card__content">
+              <h3>Call of Duty</h3>
+              <div class="offer-card__prices">
+                <span class="offer-card__old">$69.99</span>
+                <strong>$45.49</strong>
+              </div>
+              <button class="home-btn home-btn--primary home-btn--small" type="button">Comprar</button>
+            </div>
+          </article>
+
+          <article class="offer-card" aria-label="Oferta del juego FIFA 24">
+            <span class="offer-card__badge">-30%</span>
+            <img src="img/games/fifa-24.jpg" alt="Portada de FIFA 24" />
+            <div class="offer-card__content">
+              <h3>FIFA 24</h3>
+              <div class="offer-card__prices">
+                <span class="offer-card__old">$59.99</span>
+                <strong>$41.99</strong>
+              </div>
+              <button class="home-btn home-btn--primary home-btn--small" type="button">Comprar</button>
+            </div>
+          </article>
+
+          <article class="offer-card" aria-label="Oferta del juego GTA V">
+            <span class="offer-card__badge">-25%</span>
+            <img src="img/games/gta-v.jpg" alt="Portada de GTA V" />
+            <div class="offer-card__content">
+              <h3>GTA V</h3>
+              <div class="offer-card__prices">
+                <span class="offer-card__old">$39.99</span>
+                <strong>$29.99</strong>
+              </div>
+              <button class="home-btn home-btn--primary home-btn--small" type="button">Comprar</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-sellers" aria-labelledby="bestsellers-title">
+      <div class="home-shell">
+        <div class="home-section-heading">
+          <div>
+            <p class="home-section-tag">Popular</p>
+            <h2 id="bestsellers-title">Los más vendidos</h2>
+          </div>
+        </div>
+
+        <div class="home-sellers__list">
+          <article class="home-seller" aria-label="Más vendido Minecraft">
+            <span class="home-seller__rank">01</span>
+            <img src="img/games/minecraft.jpg" alt="Portada de Minecraft" />
+            <div class="home-seller__info">
+              <h3>Minecraft</h3>
+              <div class="home-seller__meta"><span>Sandbox</span><span>★ 4.9</span></div>
+            </div>
+            <div class="home-seller__price">$29.99</div>
+          </article>
+
+          <article class="home-seller" aria-label="Más vendido GTA V">
+            <span class="home-seller__rank">02</span>
+            <img src="img/games/gta-v.jpg" alt="Portada de GTA V" />
+            <div class="home-seller__info">
+              <h3>GTA V</h3>
+              <div class="home-seller__meta"><span>Acción</span><span>★ 4.8</span></div>
+            </div>
+            <div class="home-seller__price">$34.99</div>
+          </article>
+
+          <article class="home-seller" aria-label="Más vendido Fortnite">
+            <span class="home-seller__rank">03</span>
+            <img src="img/games/fortnite.jpg" alt="Portada de Fortnite" />
+            <div class="home-seller__info">
+              <h3>Fortnite</h3>
+              <div class="home-seller__meta"><span>Battle Royale</span><span>★ 4.7</span></div>
+            </div>
+            <div class="home-seller__price">$0.00</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-banner" aria-label="Banner promocional">
+      <div class="home-shell">
+        <div class="home-banner__content">
+          <p class="home-section-tag home-section-tag--light">Tu próxima aventura</p>
+          <h2>Descubre cientos de videojuegos y vive historias épicas.</h2>
+          <a href="/PROYECTO CSS/pages/catalogo.html" class="home-btn home-btn--primary home-btn--large">Explorar
+            catálogo</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="home-footer">
+    <div class="home-shell">
+      <div class="home-footer__top">
+        <div class="home-footer__brand">
+          <a href="index.html" class="home-brand" aria-label="GAMEHUB inicio">
+            <span class="home-brand__mark">G</span>
+            <span>GAMEHUB</span>
+          </a>
+          <p>Tu universo de videojuegos.</p>
+        </div>
+
+        <div class="home-footer__columns">
+          <div>
+            <h3>GameHub</h3>
+            <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="pages/catalogo.html">Catálogo</a></li>
+              <li><a href="ofertas.html">Ofertas</a></li>
             </ul>
           </div>
 
-          <aside class="home-hero__panel" aria-label="Juego destacado">
-            <div class="home-hero__panel-top">
-              <span class="home-badge home-badge--new">Top venta</span>
-              <button class="home-favorite-button" type="button" aria-label="Añadir a favoritos">♥</button>
-            </div>
-
-            <div class="home-hero__panel-image">
-              <img
-                src="img/games/cyberpunk-2077.jpg"
-                alt="Portada del juego destacado Cyberpunk 2077"
-              />
-            </div>
-
-            <div class="home-hero__panel-body">
-              <div class="home-game-meta">
-                <span>RPG</span>
-                <span>PS5</span>
-              </div>
-
-              <h2>Cyberpunk 2077</h2>
-              <div class="home-hero__rating" aria-label="Calificación 4.9 estrellas">★ 4.9</div>
-
-              <div class="home-price-row">
-                <span class="home-price-label">Desde</span>
-                <strong>$59.99</strong>
-                <span class="home-price-old">$79.99</span>
-              </div>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="home-featured" aria-labelledby="featured-title">
-        <div class="home-shell">
-          <div class="home-section-heading">
-            <div>
-              <p class="home-section-tag">Colección</p>
-              <h2 id="featured-title">Juegos destacados</h2>
-            </div>
-            <a href="catalogo.html">Ver catálogo</a>
+          <div>
+            <h3>Soporte</h3>
+            <ul>
+              <li><a href="#">Centro de ayuda</a></li>
+              <li><a href="#">Contacto</a></li>
+              <li><a href="#">Política de devoluciones</a></li>
+            </ul>
           </div>
 
-          <div class="home-featured__grid">
-            <article class="game-card" aria-label="Juego destacado Minecraft">
-              <div class="game-card__image">
-                <img src="img/games/minecraft.jpg" alt="Portada de Minecraft" />
-                <button class="game-card__favorite" type="button" aria-label="Añadir Minecraft a favoritos">♡</button>
-              </div>
-              <div class="game-card__content">
-                <div class="game-card__meta">
-                  <span>Sandbox</span>
-                  <span>PC</span>
-                </div>
-                <h3>Minecraft</h3>
-                <div class="game-card__rating">★ 4.9</div>
-                <div class="game-card__bottom">
-                  <strong>$29.99</strong>
-                  <button class="game-card__button" type="button">Comprar</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="game-card" aria-label="Juego destacado Fortnite">
-              <div class="game-card__image">
-                <img src="img/games/fortnite.jpg" alt="Portada de Fortnite" />
-                <button class="game-card__favorite" type="button" aria-label="Añadir Fortnite a favoritos">♡</button>
-              </div>
-              <div class="game-card__content">
-                <div class="game-card__meta">
-                  <span>Battle Royale</span>
-                  <span>Xbox</span>
-                </div>
-                <h3>Fortnite</h3>
-                <div class="game-card__rating">★ 4.8</div>
-                <div class="game-card__bottom">
-                  <strong>$0.00</strong>
-                  <button class="game-card__button" type="button">Comprar</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="game-card" aria-label="Juego destacado The Witcher 3">
-              <div class="game-card__image">
-                <img src="img/games/witcher-3.jpg" alt="Portada de The Witcher 3" />
-                <button class="game-card__favorite" type="button" aria-label="Añadir The Witcher 3 a favoritos">♡</button>
-              </div>
-              <div class="game-card__content">
-                <div class="game-card__meta">
-                  <span>RPG</span>
-                  <span>PC</span>
-                </div>
-                <h3>The Witcher 3</h3>
-                <div class="game-card__rating">★ 4.9</div>
-                <div class="game-card__bottom">
-                  <strong>$39.99</strong>
-                  <button class="game-card__button" type="button">Comprar</button>
-                </div>
-              </div>
-            </article>
-
-            <article class="game-card" aria-label="Juego destacado Apex Legends">
-              <div class="game-card__image">
-                <img src="img/games/apex-legends.jpg" alt="Portada de Apex Legends" />
-                <button class="game-card__favorite" type="button" aria-label="Añadir Apex Legends a favoritos">♡</button>
-              </div>
-              <div class="game-card__content">
-                <div class="game-card__meta">
-                  <span>FPS</span>
-                  <span>PS5</span>
-                </div>
-                <h3>Apex Legends</h3>
-                <div class="game-card__rating">★ 4.7</div>
-                <div class="game-card__bottom">
-                  <strong>$0.00</strong>
-                  <button class="game-card__button" type="button">Comprar</button>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="home-offers" aria-labelledby="offers-title">
-        <div class="home-shell">
-          <div class="home-section-heading">
-            <div>
-              <p class="home-section-tag">Promociones</p>
-              <h2 id="offers-title">Ofertas especiales</h2>
-            </div>
-            <a href="ofertas.html">Ver todas</a>
+          <div>
+            <h3>Comunidad</h3>
+            <ul>
+              <li><a href="#">Foro</a></li>
+              <li><a href="#">Eventos</a></li>
+              <li><a href="#">Noticias</a></li>
+            </ul>
           </div>
 
-          <div class="home-offers__grid">
-            <article class="offer-card" aria-label="Oferta del juego Call of Duty">
-              <span class="offer-card__badge">-35%</span>
-              <img src="img/games/call-of-duty.jpg" alt="Portada de Call of Duty" />
-              <div class="offer-card__content">
-                <h3>Call of Duty</h3>
-                <div class="offer-card__prices">
-                  <span class="offer-card__old">$69.99</span>
-                  <strong>$45.49</strong>
-                </div>
-                <button class="home-btn home-btn--primary home-btn--small" type="button">Comprar</button>
-              </div>
-            </article>
-
-            <article class="offer-card" aria-label="Oferta del juego FIFA 24">
-              <span class="offer-card__badge">-30%</span>
-              <img src="img/games/fifa-24.jpg" alt="Portada de FIFA 24" />
-              <div class="offer-card__content">
-                <h3>FIFA 24</h3>
-                <div class="offer-card__prices">
-                  <span class="offer-card__old">$59.99</span>
-                  <strong>$41.99</strong>
-                </div>
-                <button class="home-btn home-btn--primary home-btn--small" type="button">Comprar</button>
-              </div>
-            </article>
-
-            <article class="offer-card" aria-label="Oferta del juego GTA V">
-              <span class="offer-card__badge">-25%</span>
-              <img src="img/games/gta-v.jpg" alt="Portada de GTA V" />
-              <div class="offer-card__content">
-                <h3>GTA V</h3>
-                <div class="offer-card__prices">
-                  <span class="offer-card__old">$39.99</span>
-                  <strong>$29.99</strong>
-                </div>
-                <button class="home-btn home-btn--primary home-btn--small" type="button">Comprar</button>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="home-sellers" aria-labelledby="bestsellers-title">
-        <div class="home-shell">
-          <div class="home-section-heading">
-            <div>
-              <p class="home-section-tag">Popular</p>
-              <h2 id="bestsellers-title">Los más vendidos</h2>
-            </div>
-          </div>
-
-          <div class="home-sellers__list">
-            <article class="home-seller" aria-label="Más vendido Minecraft">
-              <span class="home-seller__rank">01</span>
-              <img src="img/games/minecraft.jpg" alt="Portada de Minecraft" />
-              <div class="home-seller__info">
-                <h3>Minecraft</h3>
-                <div class="home-seller__meta"><span>Sandbox</span><span>★ 4.9</span></div>
-              </div>
-              <div class="home-seller__price">$29.99</div>
-            </article>
-
-            <article class="home-seller" aria-label="Más vendido GTA V">
-              <span class="home-seller__rank">02</span>
-              <img src="img/games/gta-v.jpg" alt="Portada de GTA V" />
-              <div class="home-seller__info">
-                <h3>GTA V</h3>
-                <div class="home-seller__meta"><span>Acción</span><span>★ 4.8</span></div>
-              </div>
-              <div class="home-seller__price">$34.99</div>
-            </article>
-
-            <article class="home-seller" aria-label="Más vendido Fortnite">
-              <span class="home-seller__rank">03</span>
-              <img src="img/games/fortnite.jpg" alt="Portada de Fortnite" />
-              <div class="home-seller__info">
-                <h3>Fortnite</h3>
-                <div class="home-seller__meta"><span>Battle Royale</span><span>★ 4.7</span></div>
-              </div>
-              <div class="home-seller__price">$0.00</div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="home-banner" aria-label="Banner promocional">
-        <div class="home-shell">
-          <div class="home-banner__content">
-            <p class="home-section-tag home-section-tag--light">Tu próxima aventura</p>
-            <h2>Descubre cientos de videojuegos y vive historias épicas.</h2>
-            <a href="catalogo.html" class="home-btn home-btn--primary home-btn--large">Explorar catálogo</a>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="home-footer">
-      <div class="home-shell">
-        <div class="home-footer__top">
-          <div class="home-footer__brand">
-            <a href="index.html" class="home-brand" aria-label="GAMEHUB inicio">
-              <span class="home-brand__mark">G</span>
-              <span>GAMEHUB</span>
-            </a>
-            <p>Tu universo de videojuegos.</p>
-          </div>
-
-          <div class="home-footer__columns">
-            <div>
-              <h3>GameHub</h3>
-              <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="pages/catalogo.html">Catálogo</a></li>
-                <li><a href="ofertas.html">Ofertas</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3>Soporte</h3>
-              <ul>
-                <li><a href="#">Centro de ayuda</a></li>
-                <li><a href="#">Contacto</a></li>
-                <li><a href="#">Política de devoluciones</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3>Comunidad</h3>
-              <ul>
-                <li><a href="#">Foro</a></li>
-                <li><a href="#">Eventos</a></li>
-                <li><a href="#">Noticias</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h3>Redes sociales</h3>
-              <ul>
-                <li><a href="#">Discord</a></li>
-                <li><a href="#">X / Twitter</a></li>
-                <li><a href="#">Instagram</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="home-footer__bottom">
-          <span>© 2026 GAMEHUB. Todos los derechos reservados.</span>
-          <div class="home-footer__links">
-            <a href="#">Términos</a>
-            <a href="#">Privacidad</a>
-            <a href="#">Cookies</a>
+          <div>
+            <h3>Redes sociales</h3>
+            <ul>
+              <li><a href="#">Discord</a></li>
+              <li><a href="#">X / Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
           </div>
         </div>
       </div>
-    </footer>
-  </body>
+
+      <div class="home-footer__bottom">
+        <span>© 2026 GAMEHUB. Todos los derechos reservados.</span>
+        <div class="home-footer__links">
+          <a href="#">Términos</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Cookies</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
 </html>
