@@ -20,7 +20,7 @@
 /* --- Filtros (Flexbox) --- */
 .catalogo-filtros {
   display: flex;
-  flex-wrap: wrap; /* Distribuye los botones en otra línea si falta espacio en móviles[cite: 2] */
+  flex-wrap: wrap; 
   justify-content: center;
   gap: 0.8rem;
   margin-bottom: 3rem;
@@ -51,7 +51,7 @@
 /* --- Cuadrícula (CSS Grid) --- */
 .catalogo-grid {
   display: grid;
-  /* Colección intrínseca: Las columnas se crean automáticamente según el espacio[cite: 1] */
+
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
 }
@@ -59,8 +59,8 @@
 /* --- Tarjeta del Catálogo (Flexbox anidado) --- */
 .catalogo-card {
   display: flex;
-  flex-direction: column; /* Eje principal vertical para la tarjeta[cite: 2] */
-  min-height: 100%; /* Las tarjetas se estiran (stretch) para igualar sus alturas[cite: 2] */
+  flex-direction: column; 
+  min-height: 100%; 
   overflow: hidden;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
