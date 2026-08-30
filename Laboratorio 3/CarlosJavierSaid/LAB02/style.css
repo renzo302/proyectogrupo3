@@ -1,0 +1,227 @@
+:root {
+  --azul: #0b63ce;
+  --azul-oscuro: #074b9d;
+  --gris: #52657a;
+  --fondo-suave: #eef5fb;
+  --borde: #d7e2ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.6;
+  color: #0b2545;
+}
+
+a {
+  color: inherit;
+}
+
+.eyebrow {
+  color: var(--azul);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+/* ---------- CABECERA ---------- */
+/* flex-wrap permite que el menú pase a otra línea en móvil */
+.header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.nav {
+  flex: 1 1 100%; /* en móvil ocupa toda la línea */
+}
+
+.nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  border: 2px solid var(--azul);
+  border-radius: 0.5rem;
+  background: var(--azul);
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.button--secondary {
+  background: transparent;
+  color: var(--azul);
+}
+
+/* ---------- HERO ---------- */
+/* columna en móvil, fila en pantallas grandes */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+  background: var(--fondo-suave);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.hero__panel {
+  padding: 1.5rem;
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 1rem;
+}
+
+/* ---------- SECCIONES ---------- */
+.section {
+  padding: 3rem 1.5rem;
+}
+
+.section--muted {
+  background: var(--fondo-suave);
+}
+
+/* ---------- TARJETAS ---------- */
+/* flex-wrap + flex-basis: colección que se adapta sin media query */
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 16rem; /* base de 16rem, puede crecer y reducirse */
+  min-width: 0;
+  border: 1px solid var(--borde);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card__visual {
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  background: var(--azul);
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1.25rem;
+}
+
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto; /* empuja el pie al final de la tarjeta */
+  padding-top: 1rem;
+  border-top: 1px solid var(--borde);
+}
+
+/* ---------- RUTA / PASOS ---------- */
+.steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 0.75rem;
+}
+
+.steps span {
+  display: grid;
+  place-items: center;
+  flex: 0 0 2rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--azul);
+  color: white;
+}
+
+/* ---------- PRÁCTICA ---------- */
+.practice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+  color: white;
+  background: #0b2545;
+}
+
+.footer a {
+  color: white;
+}
+
+/* ---------- MEDIA QUERY: composición amplia ---------- */
+@media (min-width: 48rem) {
+  .nav {
+    flex: 0 1 auto;
+    margin-left: auto;
+  }
+
+  .hero {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero__content {
+    flex: 1 1 34rem;
+  }
+
+  .hero__panel {
+    flex: 0 1 23rem;
+  }
+}

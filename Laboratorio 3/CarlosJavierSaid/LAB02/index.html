@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruta Digital | Recursos para aprender CSS</title>
+  <link rel="stylesheet" href="/proyectogrupo3/Laboratorio 3/CarlosJavierSaid/LAB02/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header__inner">
+      <a class="brand" href="#inicio">Ruta Digital</a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#ruta">Ruta sugerida</a></li>
+          <li><a href="#practica">Práctica</a></li>
+        </ul>
+      </nav>
+      <a class="button" href="#recursos">Explorar</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO: columna en móvil, fila en pantallas grandes -->
+    <section class="hero" id="inicio">
+      <div class="hero__content">
+        <p class="eyebrow">Laboratorio CSS · Semana 2</p>
+        <h1>Organiza interfaces flexibles con Flexbox</h1>
+        <p>Aprende a distribuir espacio, alinear componentes y permitir que el contenido se adapte sin depender de anchos rígidos.</p>
+        <div class="hero__actions">
+          <a class="button" href="#recursos">Ver recursos</a>
+          <a class="button button--secondary" href="#practica">Ir al reto</a>
+        </div>
+      </div>
+      <aside class="hero__panel">
+        <h2>Un eje principal a la vez</h2>
+        <p>Flexbox distribuye elementos en una fila o columna y controla el espacio libre a lo largo de sus ejes.</p>
+      </aside>
+    </section>
+
+    <!-- TARJETAS: usan flex-wrap para saltar de línea -->
+    <section class="section" id="recursos">
+      <h2>Recursos destacados</h2>
+      <div class="card-list">
+        <article class="card">
+          <div class="card__visual">MAIN AXIS</div>
+          <div class="card__body">
+            <h3>Ejes y dirección</h3>
+            <p>flex-direction determina el eje principal.</p>
+            <footer class="card__footer">
+              <span>8 min</span>
+              <a href="#ruta">Revisar</a>
+            </footer>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__visual">GAP</div>
+          <div class="card__body">
+            <h3>Espacio y alineación</h3>
+            <p>justify-content, align-items y gap.</p>
+            <footer class="card__footer">
+              <span>12 min</span>
+              <a href="#ruta">Revisar</a>
+            </footer>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__visual">WRAP</div>
+          <div class="card__body">
+            <h3>Salto de línea</h3>
+            <p>Las tarjetas forman nuevas líneas si no hay espacio.</p>
+            <footer class="card__footer">
+              <span>10 min</span>
+              <a href="#ruta">Revisar</a>
+            </footer>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- RUTA SUGERIDA -->
+    <section class="section section--muted" id="ruta">
+      <h2>De la estructura al comportamiento responsivo</h2>
+      <ol class="steps">
+        <li><span>1</span> Define el contenedor flexible.</li>
+        <li><span>2</span> Selecciona la dirección de los elementos.</li>
+        <li><span>3</span> Distribuye y alinea el espacio libre.</li>
+        <li><span>4</span> Permite el reflujo y prueba varios anchos.</li>
+      </ol>
+    </section>
+
+    <!-- PRÁCTICA: usa margen automático para empujar el botón -->
+    <section class="section practice" id="practica">
+      <div>
+        <h2>Extiende la colección</h2>
+        <p>Agrega una tarjeta más y comprueba que no exista scroll horizontal.</p>
+      </div>
+      <a class="button" href="#recursos">Volver a los recursos</a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Ruta Digital · Laboratorio de Flexbox</p>
+    <a href="#inicio">Volver al inicio</a>
+  </footer>
+
+</body>
+</html>

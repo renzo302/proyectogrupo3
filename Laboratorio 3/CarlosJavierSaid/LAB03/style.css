@@ -1,0 +1,191 @@
+:root {
+  --azul: #0b63ce;
+  --azul-oscuro: #084c9e;
+  --gris: #5b667a;
+  --fondo: #f2f7fb;
+  --borde: #cbd9e6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  line-height: 1.6;
+  color: #10213a;
+  background: var(--fondo);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.eyebrow {
+  color: var(--azul-oscuro);
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.panel {
+  padding: 1.25rem;
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 0.75rem;
+}
+
+/* ---------- CABECERA (también usa Grid) ---------- */
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: white;
+  border-bottom: 1px solid var(--borde);
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- DASHBOARD ---------- */
+/* Móvil: una sola columna, todo apilado (rejilla explícita simple) */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "sidebar"
+    "hero"
+    "metrics"
+    "resources"
+    "tasks"
+    "activity";
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.sidebar   { grid-area: sidebar; }
+.hero      { grid-area: hero; }
+.metrics   { grid-area: metrics; }
+.resources { grid-area: resources; }
+.tasks     { grid-area: tasks; }
+.activity  { grid-area: activity; }
+
+/* ---------- METRICS ---------- */
+/* colección con auto-fit: se ajusta al espacio disponible */
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 1rem;
+}
+
+.metric__label {
+  margin: 0;
+  color: var(--gris);
+  font-size: 0.85rem;
+}
+
+.metric__value {
+  margin: 0.25rem 0 0;
+  color: var(--azul-oscuro);
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ---------- RECURSOS ---------- */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 1rem;
+}
+
+.resource-card {
+  padding: 1rem;
+  border: 1px solid var(--borde);
+  border-radius: 0.5rem;
+}
+
+/* ---------- LISTAS ---------- */
+.side-nav,
+.task-list,
+.activity-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.side-nav a {
+  display: block;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.side-nav a:hover {
+  background: #eaf3ff;
+}
+
+.task-list li {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.task-list span {
+  display: grid;
+  place-items: center;
+  padding: 0.4rem;
+  background: #eaf3ff;
+  color: var(--azul-oscuro);
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  background: #0b2545;
+}
+
+/* ---------- BREAKPOINT: 48rem, aparece la barra lateral ---------- */
+@media (min-width: 48rem) {
+  .dashboard {
+    grid-template-columns: 15rem 1fr;
+    grid-template-areas:
+      "sidebar hero"
+      "sidebar metrics"
+      "resources resources"
+      "tasks activity";
+  }
+}
+
+/* ---------- BREAKPOINT: 72rem, tres columnas ---------- */
+@media (min-width: 72rem) {
+  .dashboard {
+    grid-template-columns: 15rem 1.2fr 0.8fr;
+    grid-template-areas:
+      "sidebar hero hero"
+      "sidebar metrics metrics"
+      "sidebar resources resources"
+      "sidebar tasks activity";
+  }
+}

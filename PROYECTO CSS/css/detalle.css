@@ -13,14 +13,15 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 2rem;
-  font-size: 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
   color: var(--color-muted);
   flex-wrap: wrap;
 }
 
 .detalle-breadcrumb a {
   color: var(--color-secondary);
-  transition: color 0.2s ease;
+  transition: color 0.15s linear;
   text-decoration: none;
 }
 
@@ -30,7 +31,7 @@
 
 .detalle-breadcrumb__current {
   color: var(--color-text);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* --- Hero Section (Grid 2 columnas) --- */
@@ -49,9 +50,10 @@
 .detalle-hero__image-container {
   position: relative;
   overflow: hidden;
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  border-radius: 0;
+  border: var(--border-width) solid var(--color-text);
   background: var(--color-surface);
+  box-shadow: var(--shadow-card);
 }
 
 .detalle-hero__image {
@@ -60,7 +62,7 @@
   min-height: 450px;
   object-fit: cover;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.3s linear;
 }
 
 .detalle-hero__image-container:hover .detalle-hero__image {
@@ -82,24 +84,23 @@
   display: inline-flex;
   align-items: center;
   padding: 0.4rem 1rem;
-  border-radius: 999px;
+  border-radius: 0;
+  font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
-  backdrop-filter: blur(8px);
+  border: 2px solid var(--color-text);
 }
 
 .detalle-badge--rpg {
-  background: rgba(124, 92, 255, 0.3);
-  color: var(--color-primary);
-  border: 1px solid rgba(124, 92, 255, 0.3);
+  background: var(--color-primary);
+  color: #0a0a0a;
 }
 
 .detalle-badge--popular {
-  background: rgba(255, 184, 77, 0.25);
-  color: var(--color-accent);
-  border: 1px solid rgba(255, 184, 77, 0.3);
+  background: var(--color-accent);
+  color: #0a0a0a;
 }
 
 /* Columna derecha - Información */
@@ -111,9 +112,9 @@
 
 .detalle-hero__header h1 {
   font-size: clamp(2.2rem, 4vw, 3.5rem);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
 .detalle-hero__rating {
@@ -124,18 +125,19 @@
 }
 
 .detalle-stars {
-  color: #fbbf24;
+  color: var(--color-accent);
   font-size: 1.1rem;
   letter-spacing: 0.05rem;
 }
 
 .detalle-rating-number {
+  font-family: var(--font-display);
   font-size: 1.2rem;
-  font-weight: 700;
   color: var(--color-text);
 }
 
 .detalle-rating-count {
+  font-family: var(--font-body);
   color: var(--color-muted);
   font-size: 0.9rem;
 }
@@ -146,9 +148,9 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 0.8rem;
   padding: 1.2rem;
-  background: rgba(16, 24, 39, 0.5);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 0;
+  border: var(--border-width) solid var(--color-text);
 }
 
 .detalle-meta-item {
@@ -158,15 +160,16 @@
 }
 
 .detalle-meta-label {
+  font-family: var(--font-body);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.06rem;
   color: var(--color-muted);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .detalle-meta-value {
-  font-weight: 600;
+  font-weight: 700;
   color: var(--color-text);
 }
 
@@ -183,25 +186,28 @@
 }
 
 .detalle-price-old {
+  font-family: var(--font-body);
   font-size: 1.3rem;
   color: var(--color-muted);
   text-decoration: line-through;
 }
 
 .detalle-price-current {
+  font-family: var(--font-display);
   font-size: 2.5rem;
-  font-weight: 900;
   color: var(--color-text);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .detalle-price-discount {
   padding: 0.3rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(61, 220, 151, 0.2);
-  color: var(--color-success);
+  border-radius: 0;
+  background: var(--color-success);
+  color: #0a0a0a;
   font-weight: 700;
+  font-family: var(--font-body);
   font-size: 0.9rem;
+  border: 2px solid var(--color-text);
 }
 
 /* Acciones */
@@ -217,37 +223,40 @@
   justify-content: center;
   gap: 0.6rem;
   padding: 0.8rem 2rem;
-  border-radius: 999px;
-  font-weight: 700;
+  border-radius: 0;
+  font-family: var(--font-display);
   font-size: 1rem;
-  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: transform 0.15s linear, box-shadow 0.15s linear;
   cursor: pointer;
-  border: none;
+  border: var(--border-width) solid var(--color-text);
   flex: 1;
   min-width: 180px;
 }
 
 .detalle-btn--primary {
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  color: #fff;
-  box-shadow: 0 8px 25px rgba(124, 92, 255, 0.35);
+  background: var(--color-primary);
+  color: #0a0a0a;
+  box-shadow: 6px 6px 0 var(--color-text);
 }
 
 .detalle-btn--primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(124, 92, 255, 0.5);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--color-text);
 }
 
 .detalle-btn--favorite {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--color-background);
   color: var(--color-text);
-  border: 1px solid var(--color-border);
+  box-shadow: 6px 6px 0 var(--color-accent);
 }
 
 .detalle-btn--favorite:hover {
-  background: rgba(255, 184, 77, 0.15);
+  background: var(--color-surface);
   border-color: var(--color-accent);
-  transform: translateY(-3px);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--color-accent);
 }
 
 .detalle-btn--large {
@@ -261,15 +270,17 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1.2rem;
-  border-radius: 999px;
-  font-weight: 600;
+  border-radius: 0;
+  font-weight: 700;
+  font-family: var(--font-body);
   font-size: 0.9rem;
+  text-transform: uppercase;
 }
 
 .detalle-availability--in-stock {
-  background: rgba(61, 220, 151, 0.15);
+  background: transparent;
   color: var(--color-success);
-  border: 1px solid rgba(61, 220, 151, 0.2);
+  border: 2px solid var(--color-success);
 }
 
 /* --- Sección Descripción --- */
@@ -287,10 +298,11 @@
 .detalle-requirements h2 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .detalle-description__content p {
+  font-family: var(--font-body);
   color: var(--color-muted);
   line-height: 1.8;
   margin-bottom: 1.2rem;
@@ -299,9 +311,9 @@
 .detalle-features {
   margin-top: 1.5rem;
   padding: 1.5rem;
-  background: rgba(16, 24, 39, 0.5);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 0;
+  border: var(--border-width) solid var(--color-text);
 }
 
 .detalle-features h3 {
@@ -322,6 +334,7 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  font-family: var(--font-body);
   font-size: 0.95rem;
 }
 
@@ -335,15 +348,16 @@
 
 .detalle-requirements__section {
   padding: 1.2rem;
-  background: rgba(16, 24, 39, 0.5);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 0;
+  border: var(--border-width) solid var(--color-text);
 }
 
 .detalle-requirements__section h4 {
   margin-bottom: 0.8rem;
   color: var(--color-secondary);
   font-size: 1rem;
+  text-transform: uppercase;
 }
 
 .detalle-requirements__section ul {
@@ -354,6 +368,7 @@
 
 .detalle-requirements__section ul li {
   padding: 0.3rem 0;
+  font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--color-muted);
   line-height: 1.5;
@@ -374,10 +389,11 @@
 
 .detalle-related__header h2 {
   font-size: 2rem;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
 }
 
 .detalle-related__header p {
+  font-family: var(--font-body);
   color: var(--color-muted);
   margin-top: 0.3rem;
 }
@@ -390,34 +406,35 @@
 
 /* Card de juego relacionado */
 .detalle-related-card {
-  background: rgba(16, 24, 39, 0.5);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 0;
+  border: var(--border-width) solid var(--color-border);
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.15s linear;
 }
 
 .detalle-related-card:hover {
-  transform: translateY(-6px);
+  transform: translate(-4px, -4px);
   border-color: var(--color-primary);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 8px 8px 0 var(--color-primary);
 }
 
 .detalle-related-card__image {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
+  border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .detalle-related-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s linear;
 }
 
 .detalle-related-card:hover .detalle-related-card__image img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .detalle-related-card__badge {
@@ -425,15 +442,15 @@
   top: 0.8rem;
   left: 0.8rem;
   padding: 0.3rem 0.8rem;
-  border-radius: 999px;
-  background: rgba(124, 92, 255, 0.3);
-  color: var(--color-primary);
+  border-radius: 0;
+  background: var(--color-primary);
+  color: #0a0a0a;
+  font-family: var(--font-body);
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.04rem;
   text-transform: uppercase;
-  backdrop-filter: blur(4px);
-  border: 1px solid rgba(124, 92, 255, 0.2);
+  border: 2px solid var(--color-text);
 }
 
 .detalle-related-card__content {
@@ -443,12 +460,13 @@
 .detalle-related-card__content h3 {
   font-size: 1.05rem;
   margin-bottom: 0.3rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
 }
 
 .detalle-related-card__rating {
+  font-family: var(--font-body);
   font-size: 0.85rem;
-  color: #fbbf24;
+  color: var(--color-accent);
   margin-bottom: 0.5rem;
 }
 
@@ -460,29 +478,30 @@
 }
 
 .detalle-related-card__price {
+  font-family: var(--font-display);
   font-size: 1.2rem;
-  font-weight: 700;
   color: var(--color-text);
 }
 
 .detalle-related-card__btn {
   padding: 0.4rem 1.2rem;
-  border-radius: 999px;
-  background: rgba(124, 92, 255, 0.15);
+  border-radius: 0;
+  background: transparent;
   color: var(--color-primary);
-  border: none;
-  font-weight: 600;
+  border: 2px solid var(--color-primary);
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.15s linear;
   text-decoration: none;
   display: inline-block;
 }
 
 .detalle-related-card__btn:hover {
   background: var(--color-primary);
-  color: #fff;
-  transform: translateY(-2px);
+  color: #0a0a0a;
+  transform: translate(-2px, -2px);
 }
 
 /* ============================================
@@ -630,24 +649,7 @@
   }
 }
 
-/* --- Animación de entrada para las cards --- */
+/* Sin animaciones de entrada: el brutalismo aparece de golpe, sin suavizados */
 .detalle-related-card {
-  opacity: 0;
-  animation: fadeInUp 0.5s ease forwards;
-}
-
-.detalle-related-card:nth-child(1) { animation-delay: 0.05s; }
-.detalle-related-card:nth-child(2) { animation-delay: 0.1s; }
-.detalle-related-card:nth-child(3) { animation-delay: 0.15s; }
-.detalle-related-card:nth-child(4) { animation-delay: 0.2s; }
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 1;
 }

@@ -16,15 +16,14 @@
 
 .favoritos-header h1 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--color-primary);
+  -webkit-text-stroke: 1px var(--color-text);
 }
 
 .favoritos-subtitle {
+  font-family: var(--font-body);
   color: var(--color-muted);
   font-size: 1.1rem;
 }
@@ -41,10 +40,11 @@
 .favoritos-count {
   display: inline-block;
   padding: 0.5rem 1.5rem;
-  border-radius: 999px;
-  background: rgba(16, 24, 39, 0.5);
-  border: 1px solid var(--color-border);
-  font-weight: 600;
+  border-radius: 0;
+  background: var(--color-surface);
+  border: 2px solid var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 0.95rem;
   color: var(--color-text);
 }
@@ -59,28 +59,28 @@
 
 /* --- Card de favorito --- */
 .favoritos-card {
-  background: linear-gradient(180deg, rgba(21, 31, 50, 0.96), rgba(9, 15, 27, 0.96));
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  border-radius: 0;
+  border: var(--border-width) solid var(--color-border);
   overflow: hidden;
-  transition: all 0.35s ease;
+  transition: transform 0.15s linear, box-shadow 0.15s linear, border-color 0.15s linear;
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  animation: fadeInUp 0.5s ease forwards;
+  animation: popIn 0.25s ease-out forwards;
 }
 
 .favoritos-card:hover {
-  transform: translateY(-8px);
+  transform: translate(-6px, -6px);
   border-color: var(--color-primary);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 10px 10px 0 var(--color-primary);
 }
 
 /* Animación de entrada */
-@keyframes fadeInUp {
+@keyframes popIn {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(14px);
   }
   to {
     opacity: 1;
@@ -88,29 +88,30 @@
   }
 }
 
-.favoritos-card:nth-child(1) { animation-delay: 0.05s; }
-.favoritos-card:nth-child(2) { animation-delay: 0.1s; }
-.favoritos-card:nth-child(3) { animation-delay: 0.15s; }
-.favoritos-card:nth-child(4) { animation-delay: 0.2s; }
-.favoritos-card:nth-child(5) { animation-delay: 0.25s; }
-.favoritos-card:nth-child(6) { animation-delay: 0.3s; }
+.favoritos-card:nth-child(1) { animation-delay: 0.02s; }
+.favoritos-card:nth-child(2) { animation-delay: 0.04s; }
+.favoritos-card:nth-child(3) { animation-delay: 0.06s; }
+.favoritos-card:nth-child(4) { animation-delay: 0.08s; }
+.favoritos-card:nth-child(5) { animation-delay: 0.1s; }
+.favoritos-card:nth-child(6) { animation-delay: 0.12s; }
 
 /* --- Imagen de la card --- */
 .favoritos-card__image {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16 / 9;
+  border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .favoritos-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.25s linear;
 }
 
 .favoritos-card:hover .favoritos-card__image img {
-  transform: scale(1.06);
+  transform: scale(1.04);
 }
 
 /* Badge en la imagen */
@@ -119,22 +120,22 @@
   top: 1rem;
   left: 1rem;
   padding: 0.3rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(124, 92, 255, 0.3);
-  color: var(--color-primary);
+  border-radius: 0;
+  background: var(--color-primary);
+  color: #0a0a0a;
+  font-family: var(--font-body);
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.04rem;
   text-transform: uppercase;
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(124, 92, 255, 0.2);
+  border: 2px solid var(--color-text);
   z-index: 2;
 }
 
 .favoritos-card__badge--gratis {
-  background: rgba(61, 220, 151, 0.2);
-  color: var(--color-success);
-  border-color: rgba(61, 220, 151, 0.2);
+  background: var(--color-success);
+  color: #0a0a0a;
+  border-color: var(--color-text);
   left: auto;
   right: 1rem;
 }
@@ -149,13 +150,14 @@
 
 .favoritos-card__content h3 {
   font-size: 1.2rem;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin-bottom: 0.3rem;
   color: var(--color-text);
 }
 
 .favoritos-card__rating {
-  color: #fbbf24;
+  color: var(--color-accent);
+  font-family: var(--font-body);
   font-size: 0.9rem;
   margin-bottom: 0.5rem;
 }
@@ -167,13 +169,13 @@
   align-items: center;
   margin-top: auto;
   padding-top: 0.8rem;
-  border-top: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-muted);
 }
 
 .favoritos-card__price {
+  font-family: var(--font-display);
   font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   color: var(--color-text);
 }
 
@@ -185,46 +187,47 @@
 /* --- Botones de la card --- */
 .favoritos-card__btn {
   padding: 0.4rem 0.9rem;
-  border-radius: 999px;
-  border: none;
-  font-weight: 600;
+  border-radius: 0;
+  border: 2px solid var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
-  transition: all 0.25s ease;
+  transition: all 0.15s linear;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: inherit;
   min-height: 36px;
 }
 
 /* Botón VER */
 .favoritos-card__btn--view {
-  background: rgba(124, 92, 255, 0.15);
+  background: transparent;
   color: var(--color-primary);
+  border-color: var(--color-primary);
 }
 
 .favoritos-card__btn--view:hover {
   background: var(--color-primary);
-  color: #fff;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(124, 92, 255, 0.3);
+  color: #0a0a0a;
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 var(--color-text);
 }
 
 /* Botón ELIMINAR */
 .favoritos-card__btn--remove {
-  background: rgba(255, 60, 60, 0.1);
-  color: #ff6b6b;
-  border: 1px solid rgba(255, 60, 60, 0.1);
+  background: transparent;
+  color: #ff4d4d;
+  border: 2px solid #ff4d4d;
   font-size: 0.75rem;
   padding: 0.3rem 0.7rem;
 }
 
 .favoritos-card__btn--remove:hover {
-  background: rgba(255, 60, 60, 0.3);
-  transform: scale(1.1);
-  border-color: rgba(255, 60, 60, 0.3);
+  background: #ff4d4d;
+  color: #0a0a0a;
+  transform: scale(1.05);
 }
 
 /* --- Estado vacío --- */
@@ -232,9 +235,9 @@
   text-align: center;
   padding: 4rem 2rem;
   margin: 2rem 0;
-  border: 2px dashed var(--color-border);
-  border-radius: var(--radius-lg);
-  background: rgba(16, 24, 39, 0.3);
+  border: var(--border-width) dashed var(--color-muted);
+  border-radius: 0;
+  background: var(--color-surface);
 }
 
 .favoritos-empty__icon {
@@ -249,6 +252,7 @@
 }
 
 .favoritos-empty p {
+  font-family: var(--font-body);
   color: var(--color-muted);
   margin-bottom: 1.5rem;
 }
@@ -386,40 +390,15 @@
 }
 
 /* ============================================
-   ANIMACIONES ADICIONALES
+   EFECTO HOVER DE IMAGEN (overlay plano, sin degradado)
    ============================================ */
-
-/* Efecto de entrada para cada card */
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.favoritos-card {
-  animation: slideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-}
-
-.favoritos-card:nth-child(1) { animation-delay: 0.05s; }
-.favoritos-card:nth-child(2) { animation-delay: 0.1s; }
-.favoritos-card:nth-child(3) { animation-delay: 0.15s; }
-.favoritos-card:nth-child(4) { animation-delay: 0.2s; }
-.favoritos-card:nth-child(5) { animation-delay: 0.25s; }
-.favoritos-card:nth-child(6) { animation-delay: 0.3s; }
-
-/* Efecto hover para la imagen */
 .favoritos-card__image::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 60%, rgba(0, 0, 0, 0.3));
+  background: rgba(255, 45, 120, 0.12);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.15s linear;
   z-index: 1;
 }
 
@@ -440,7 +419,7 @@
 
 .favoritos-main::-webkit-scrollbar-thumb {
   background: var(--color-primary);
-  border-radius: 999px;
+  border-radius: 0;
 }
 
 .favoritos-main::-webkit-scrollbar-thumb:hover {

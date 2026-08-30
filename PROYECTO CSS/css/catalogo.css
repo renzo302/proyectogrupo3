@@ -9,49 +9,52 @@
 
 .catalogo-header h1 {
   font-size: clamp(2rem, 4vw, 3rem);
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
 }
 
 .catalogo-header p {
+  font-family: var(--font-body);
   color: var(--color-muted);
 }
 
 /* --- Filtros (Flexbox) --- */
 .catalogo-filtros {
   display: flex;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.8rem;
   margin-bottom: 3rem;
 }
 
 .catalogo-btn-filtro {
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--color-surface);
   color: var(--color-text);
-  border: 1px solid var(--color-border);
+  border: 2px solid var(--color-text);
   padding: 0.6rem 1.2rem;
-  border-radius: 999px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: all 0.25s ease;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: all 0.15s linear;
 }
 
 .catalogo-btn-filtro:hover {
   border-color: var(--color-secondary);
-  background: rgba(37, 208, 255, 0.1);
+  color: var(--color-secondary);
 }
 
 .catalogo-btn-filtro.is-active {
-  background: var(--color-primary-strong);
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 15px rgba(124, 92, 255, 0.3);
+  background: var(--color-primary);
+  color: #0a0a0a;
+  border-color: var(--color-text);
+  box-shadow: 4px 4px 0 var(--color-text);
 }
 
 /* --- Cuadrícula (CSS Grid) --- */
 .catalogo-grid {
   display: grid;
-
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: 1.5rem;
 }
@@ -59,34 +62,37 @@
 /* --- Tarjeta del Catálogo (Flexbox anidado) --- */
 .catalogo-card {
   display: flex;
-  flex-direction: column; 
-  min-height: 100%; 
+  flex-direction: column;
+  min-height: 100%;
   overflow: hidden;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  background: linear-gradient(180deg, rgba(21, 31, 50, 0.96), rgba(9, 15, 27, 0.96));
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-surface);
+  transition: transform 0.15s linear, border-color 0.15s linear, box-shadow 0.15s linear;
+  box-shadow: var(--shadow-card);
 }
 
 .catalogo-card:hover {
-  transform: translateY(-4px);
+  transform: translate(-4px, -4px);
   border-color: var(--color-primary);
+  box-shadow: 9px 9px 0 var(--color-primary);
 }
 
 .catalogo-card__image {
   position: relative;
   overflow: hidden;
+  border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .catalogo-card__image img {
   width: 100%;
   aspect-ratio: 16 / 10; /* Multimedia responsiva con proporción fija*/
   object-fit: cover;
-  transition: transform 0.35s ease;
+  transition: transform 0.25s linear;
 }
 
 .catalogo-card:hover .catalogo-card__image img {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 /* Badge reutilizado de home.css pero reposicionado */
@@ -104,16 +110,17 @@
   z-index: 2;
   width: 2.2rem;
   height: 2.2rem;
-  border-radius: 50%;
-  background: rgba(8, 13, 23, 0.75);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: background 0.25s ease, transform 0.25s ease;
+  border-radius: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+  transition: background 0.15s linear, transform 0.15s linear;
 }
 
 .catalogo-card__favorite:hover {
-  background: rgba(255, 184, 77, 0.18);
-  transform: scale(1.1);
+  background: var(--color-accent);
+  color: #0a0a0a;
+  transform: scale(1.08);
 }
 
 .catalogo-card__content {
@@ -125,12 +132,13 @@
 
 .catalogo-card__content h3 {
   font-size: 1.2rem;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   margin-bottom: 0.4rem;
 }
 
 .catalogo-card__rating {
-  color: #fbbf24;
+  color: var(--color-accent);
+  font-family: var(--font-body);
   font-size: 0.85rem;
 }
 
@@ -140,10 +148,12 @@
   align-items: center;
   margin-top: auto; /* el precio y botón siempre abajo*/
   padding-top: 1.2rem;
+  border-top: 1px solid var(--color-muted);
 }
 
 .catalogo-card__bottom strong {
+  font-family: var(--font-display);
   font-size: 1.5rem;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.02em;
   color: var(--color-text);
 }

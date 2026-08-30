@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Campus Grid | Panel de aprendizaje</title>
+  <link rel="stylesheet" href="/proyectogrupo3/Laboratorio 3/CarlosJavierSaid/LAB03/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <a class="brand" href="#inicio">Campus Grid</a>
+    <nav>
+      <ul class="nav__list">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#entregas">Entregas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- DASHBOARD: contenedor grid con 6 áreas nombradas -->
+  <main id="inicio" class="dashboard">
+
+    <aside class="panel sidebar">
+      <h2>CSS avanzado</h2>
+      <ul class="side-nav">
+        <li><a href="#inicio">Resumen</a></li>
+        <li><a href="#recursos">Recursos</a></li>
+        <li><a href="#entregas">Entregas</a></li>
+        <li><a href="#actividad">Actividad</a></li>
+      </ul>
+    </aside>
+
+    <section class="panel hero">
+      <p class="eyebrow">Semana 3 · CSS Grid Layout</p>
+      <h1>Organiza el espacio en filas y columnas</h1>
+      <p>Una composición bidimensional, flexible y lista para contenido real.</p>
+    </section>
+
+    <section class="metrics">
+      <article class="panel metric">
+        <p class="metric__label">Progreso</p>
+        <p class="metric__value">68%</p>
+      </article>
+      <article class="panel metric">
+        <p class="metric__label">Laboratorios</p>
+        <p class="metric__value">2 de 3</p>
+      </article>
+      <article class="panel metric">
+        <p class="metric__label">Próxima sesión</p>
+        <p class="metric__value">PC1</p>
+      </article>
+    </section>
+
+    <section id="recursos" class="panel resources">
+      <h2>Recursos recomendados</h2>
+      <!-- colección intrínseca: repeat(auto-fit, minmax(...)) -->
+      <div class="resource-grid">
+        <article class="resource-card">
+          <h3>Anatomía de una cuadrícula</h3>
+          <p>Líneas, tracks, celdas y áreas.</p>
+        </article>
+        <article class="resource-card">
+          <h3>Tracks fluidos</h3>
+          <p>minmax() para colecciones responsivas.</p>
+        </article>
+        <article class="resource-card">
+          <h3>Áreas nombradas</h3>
+          <p>Composiciones legibles por breakpoint.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="entregas" class="panel tasks">
+      <h2>Próximas entregas</h2>
+      <ol class="task-list">
+        <li><span>26 AGO</span> Laboratorio de Grid</li>
+        <li><span>02 SEP</span> Práctica calificada 1</li>
+      </ol>
+    </section>
+
+    <section id="actividad" class="panel activity">
+      <h2>Tu avance</h2>
+      <ul class="activity-list">
+        <li>✓ Completaste Flexbox</li>
+        <li>✓ Probaste a 320px</li>
+        <li>→ Continúa con CSS Grid</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>Campus Grid · Laboratorio académico</p>
+  </footer>
+
+</body>
+</html>
