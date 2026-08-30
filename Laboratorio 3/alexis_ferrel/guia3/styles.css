@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #f4f4f9;
+  padding: 1rem;
+}
+
+.shell {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "hero"
+    "metrics"
+    "resources"
+    "tasks"
+    "activity"
+    "sidebar";
+}
+
+.sidebar { grid-area: sidebar; background: #2c3e50; color: white; padding: 1rem; }
+.hero { grid-area: hero; background: #3498db; color: white; padding: 1.5rem; }
+.metrics { grid-area: metrics; display: grid; gap: 0.5rem; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); }
+.resources { grid-area: resources; background: white; padding: 1rem; }
+.tasks { grid-area: tasks; background: white; padding: 1rem; }
+.activity { grid-area: activity; background: white; padding: 1rem; }
+
+.sidebar ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  color: #ecf0f1;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+.card {
+  background: #ecf0f1;
+  padding: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .shell {
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+      "sidebar hero"
+      "sidebar metrics"
+      "sidebar resources"
+      "sidebar tasks"
+      "sidebar activity";
+  }
+}
+
+@media (min-width: 72rem) {
+  .shell {
+    grid-template-columns: minmax(12rem, 15rem) minmax(0, 1.2fr) minmax(17rem, 0.8fr);
+    grid-template-areas:
+      "sidebar hero hero"
+      "sidebar metrics metrics"
+      "sidebar resources resources"
+      "sidebar tasks activity";
+  }
+}
