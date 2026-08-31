@@ -20,10 +20,20 @@
         <nav class="home-nav" aria-label="Navegación principal">
           <a href="../../index.html">Inicio</a>
           <a href="../catalogo.html">Catálogo</a>
-          <a href="../busqueda.html">Buscar</a>
+          <a href="../ofertas.html">Ofertas</a>
           <a href="../favoritos.html">Favoritos</a>
         </nav>
         <div class="home-header__actions">
+
+      <div class="search-box">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+        <input type="text" id="buscador-global" placeholder="Buscar título...">
+       </div>
+       <div id="resultados-busqueda" class="search-results"></div>
+      </div>
+
           <button class="home-menu-toggle" type="button" aria-label="Abrir menú">☰</button>
           <a class="home-btn home-btn--ghost" href="../perfil.html">Perfil</a>
           <a class="home-btn home-btn--primary" href="../carrito.html">Carrito</a>
@@ -261,5 +271,6 @@
         </div>
       </div>
     </footer>
+    <script src="../../js/busqueda.js"></script>
   </body>
 </html>

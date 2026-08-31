@@ -168,3 +168,47 @@ h3 {
 .home-section-tag--light {
   color: var(--color-accent);
 }
+
+
+.search-container {
+    position: relative; 
+    margin-right: 20px; /* Separa el buscador de los botones */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid #ff2d78; 
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+    border-color: #fceb00; /* Cambia a amarillo neón al hacer clic */
+    box-shadow: 0 0 8px rgba(252, 235, 0, 0.5);
+}
+
+.search-icon {
+    width: 16px;
+    height: 16px;
+    fill: #ffffff;
+    margin-right: 8px;
+}
+
+#buscador-global {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    width: 200px;
+}
+
+
+.home-header__actions {
+    display: flex;
+    align-items: center;
+    gap: 8px; 
+}

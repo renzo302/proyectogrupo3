@@ -1,0 +1,239 @@
+.ofertas-main {
+  padding: 3rem 0 5rem;
+  min-height: 60vh;
+}
+
+/* --- Header de Ofertas --- */
+.ofertas-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ofertas-header h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  -webkit-text-stroke: 1px var(--color-text); /* Mantiene el estilo de borde de texto */
+}
+
+.ofertas-subtitle {
+  font-family: var(--font-body);
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}
+
+/* --- Grid de Ofertas --- */
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Tarjeta de Juego --- */
+.game-card {
+  background: var(--color-surface);
+  border-radius: 0;
+  border: var(--border-width) solid var(--color-border);
+  overflow: hidden;
+  transition: transform 0.15s linear, box-shadow 0.15s linear, border-color 0.15s linear;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  animation: popIn 0.25s ease-out forwards;
+}
+
+.game-card:hover {
+  transform: translate(-6px, -6px); 
+  border-color: var(--color-primary);
+  box-shadow: 10px 10px 0 var(--color-primary); 
+}
+
+/* Animación en cascada de tus favoritos */
+@keyframes popIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.game-card:nth-child(1) { animation-delay: 0.02s; }
+.game-card:nth-child(2) { animation-delay: 0.04s; }
+.game-card:nth-child(3) { animation-delay: 0.06s; }
+.game-card:nth-child(4) { animation-delay: 0.08s; }
+.game-card:nth-child(5) { animation-delay: 0.1s; }
+.game-card:nth-child(6) { animation-delay: 0.12s; }
+
+/* --- Imagen de la Tarjeta --- */
+.game-card__image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.game-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.25s linear;
+}
+
+.game-card:hover .game-card__image img {
+  transform: scale(1.04);
+}
+
+/* Efecto de capa rosa al pasar el mouse  */
+.game-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 45, 120, 0.12);
+  opacity: 0;
+  transition: opacity 0.15s linear;
+  z-index: 1;
+}
+
+.game-card:hover .game-card__image::after {
+  opacity: 1;
+}
+
+/* Etiqueta de Descuento */
+.game-discount-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 0;
+  background: var(--color-primary-strong);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  border: 2px solid var(--color-text);
+  box-shadow: 4px 4px 0 #000;
+  transform: rotate(5deg);
+  z-index: 2;
+}
+
+/* --- Contenido de la Tarjeta --- */
+.game-card__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+.game-card__info h3 {
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
+  color: var(--color-text);
+}
+
+/* --- Precios --- */
+.game-pricing {
+  display: flex;
+  justify-content: space-between; /* Separa los precios  */
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  margin-bottom: 1rem;
+  border-top: 2px solid var(--color-muted);
+}
+
+.price-old {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-primary); /* Línea de tachado rosa */
+}
+
+.price-new {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  color: var(--color-success); /* Verde neón para el precio final */
+}
+
+/* Botón VER OFERTA */
+.game-card__info .home-btn {
+  width: 100%;
+}
+
+
+@media (max-width: 1024px) {
+  .ofertas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .ofertas-main {
+    padding: 2rem 0 3rem;
+  }
+  .ofertas-header h1 {
+    font-size: 2.2rem;
+  }
+  .ofertas-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .ofertas-main {
+    padding: 1.5rem 0 3rem;
+  }
+  .ofertas-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .ofertas-header h1 {
+    font-size: 1.8rem;
+  }
+  .game-card__image {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 480px) {
+  .game-discount-badge {
+    top: 0.6rem;
+    right: 0.6rem;
+    font-size: 1rem;
+    padding: 0.2rem 0.6rem;
+  }
+  .game-card__info {
+    padding: 0.9rem;
+  }
+  .game-card__info h3 {
+    font-size: 1.1rem;
+  }
+  .price-new {
+    font-size: 1.4rem;
+  }
+}
+
+.ofertas-main::-webkit-scrollbar {
+  width: 8px;
+}
+.ofertas-main::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+.ofertas-main::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 0;
+}
+.ofertas-main::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-strong);
+}

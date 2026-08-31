@@ -23,13 +23,24 @@
 
       <nav class="home-nav" aria-label="Navegación principal">
         <a href="index.html" class="is-active">Inicio</a>
-        <a href="/proyectogrupo3/PROYECTO CSS/pages/catalogo.html">Catálogo</a>
-        <a href="/proyectogrupo3/PROYECTO CSS/pages/ofertas.html">Ofertas</a>
-        <a href="/proyectogrupo3/PROYECTO CSS/pages/favoritos.html">Favoritos</a>
-        <a href="/proyectogrupo3/PROYECTO CSS/pages/carrito.html">Carrito</a>
+        <a href="pages/catalogo.html">Catálogo</a>
+        <a href="pages/ofertas.html">Ofertas</a> 
+        <a href="pages/favoritos.html">Favoritos</a>
+        <!--<a href="/proyectogrupo3/PROYECTO CSS/pages/carrito.html">Carrito</a> -->
       </nav>
 
       <div class="home-header__actions">
+
+      <div class="search-container">
+        <div class="search-box">
+        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+        </svg>
+        <input type="text" id="buscador-global" placeholder="Buscar título...">
+       </div>
+       <div id="resultados-busqueda" class="search-results"></div>
+      </div>
+
         <button class="home-menu-toggle" type="button" aria-label="Abrir menú">☰</button>
         <a class="home-btn home-btn--ghost" href="/proyectogrupo3/PROYECTO CSS/pages/perfil.html">Perfil</a>
         <a class="home-btn home-btn--primary" href="/proyectogrupo3/PROYECTO CSS/pages/carrito.html">Carrito</a>
@@ -51,7 +62,7 @@
           <div class="home-hero__actions">
             <a href="/PROYECTO CSS/pages/catalogo.html" class="home-btn home-btn--primary home-btn--large">Explorar
               juegos</a>
-            <a href="ofertas.html" class="home-btn home-btn--secondary home-btn--large">Ver ofertas</a>
+            <a href="pages/ofertas.html" class="home-btn home-btn--secondary home-btn--large">Ver ofertas</a>
           </div>
 
           <ul class="home-hero__stats" aria-label="Estadísticas importantes">
@@ -209,10 +220,10 @@
       <div class="home-shell">
         <div class="home-section-heading">
           <div>
-            <p class="home-section-tag">Promociones</p>
+            <p class="home-section-tag">ofertas</p>
             <h2 id="offers-title">Ofertas especiales</h2>
           </div>
-          <a href="ofertas.html">Ver todas</a>
+          <a href="pages/ofertas.html">Ver todas</a>
         </div>
 
         <div class="home-offers__grid">
@@ -330,7 +341,7 @@
             <ul>
               <li><a href="index.html">Inicio</a></li>
               <li><a href="pages/catalogo.html">Catálogo</a></li>
-              <li><a href="ofertas.html">Ofertas</a></li>
+              <li><a href="pages/ofertas.html">Ofertas</a></li>
             </ul>
           </div>
 
@@ -373,6 +384,7 @@
       </div>
     </div>
   </footer>
+  <script src="js/busqueda.js"></script>
 </body>
 
 </html>

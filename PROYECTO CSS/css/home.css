@@ -810,3 +810,28 @@
     align-items: flex-start;
   }
 }
+
+
+@media (max-width: 1024px) {
+    /*  Oculta botón de menú móvil  */
+    .home-menu-toggle {
+        display: none !important;
+    }
+
+    
+    .home-header__inner {
+        flex-wrap: wrap;
+        padding-bottom: 15px; 
+    }
+
+    
+    .home-nav {
+        display: flex !important; 
+        width: 100%; 
+        order: 3; 
+        justify-content: center; /* Centra los botones */
+        gap: 15px;
+        margin-top: 15px;
+        flex-wrap: wrap; /* Si la pantalla es pequeña los enlaces se acomodan solos */
+    }
+}

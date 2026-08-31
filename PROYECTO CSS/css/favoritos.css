@@ -1,8 +1,4 @@
-/* ============================================
-   FAVORITOS.CSS - Estilos para la página de favoritos
-   ============================================ */
 
-/* --- Contenedor principal --- */
 .favoritos-main {
   padding: 3rem 0 5rem;
   min-height: 60vh;
@@ -18,7 +14,7 @@
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
-  color: var(--color-primary);
+  color: #ffffff;
   -webkit-text-stroke: 1px var(--color-text);
 }
 
@@ -261,9 +257,6 @@
   display: inline-flex;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
 
 /* Tablets y pantallas medianas */
 @media (max-width: 1024px) {
@@ -389,9 +382,7 @@
   }
 }
 
-/* ============================================
-   EFECTO HOVER DE IMAGEN (overlay plano, sin degradado)
-   ============================================ */
+
 .favoritos-card__image::after {
   content: '';
   position: absolute;
@@ -406,9 +397,7 @@
   opacity: 1;
 }
 
-/* ============================================
-   SCROLLBAR PERSONALIZADA
-   ============================================ */
+
 .favoritos-main::-webkit-scrollbar {
   width: 8px;
 }
