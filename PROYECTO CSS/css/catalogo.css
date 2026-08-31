@@ -157,3 +157,25 @@
   letter-spacing: -0.02em;
   color: var(--color-text);
 }
+
+
+/* Dispositivos móviles  */
+@media (max-width: 768px) {
+  .catalogo-main {
+    padding: 2rem 0 3rem; 
+  }
+  .catalogo-filtros {
+    gap: 0.5rem; 
+  }
+  .catalogo-btn-filtro {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Tabletas y pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .catalogo-grid {
+    gap: 1rem; 
+  }
+}
