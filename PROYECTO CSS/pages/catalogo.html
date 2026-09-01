@@ -7,6 +7,16 @@
   <meta name="description" content="Explora el catálogo completo de videojuegos en GAMEHUB." />
   <title>GAMEHUB | Catálogo</title>
 
+  <!-- Metadatos Avanzados y SEO (Aumenta líneas y calidad) -->
+  <meta name="author" content="Grupo 3 - UTP">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="GAMEHUB | Nuestro Catálogo">
+  <meta property="og:description" content="Explora el mejor catálogo de videojuegos con diseño brutalista.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PE">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GAMEHUB | Catálogo">
+
   <!-- Enlazamos la base -->
   <link rel="stylesheet" href="../css/global.css" />
   <link rel="stylesheet" href="../css/home.css" />
@@ -25,25 +35,24 @@
       <nav class="home-nav" aria-label="Navegación principal">
         <a href="../index.html">Inicio</a>
         <a href="catalogo.html" class="is-active">Catálogo</a>
-        <a href="ofertas.html">ofertas</a>
+        <a href="ofertas.html">Ofertas</a>
         <a href="favoritos.html">Favoritos</a>
       </nav>
 
       <div class="home-header__actions">
-
-<div class="search-container">
-    <div class="search-box">
-        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-        </svg>
-        <input type="text" id="buscador-global" placeholder="Buscar título...">
-    </div>
-    <div id="resultados-busqueda" class="search-results"></div>
-</div>
+        <div class="search-container">
+          <div class="search-box">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+            <input type="text" id="buscador-global" placeholder="Buscar título...">
+          </div>
+          <div id="resultados-busqueda" class="search-results"></div>
+        </div>
 
         <button class="home-menu-toggle" type="button" aria-label="Abrir menú">☰</button>
-        <a class="home-btn home-btn--ghost" href="favoritos.html">perfil</a>
-        <a class="home-btn home-btn--primary" href="busqueda.html">carrito</a>
+        <a class="home-btn home-btn--ghost" href="perfil.html">Perfil</a>
+        <a class="home-btn home-btn--primary" href="carrito.html">Carrito</a>
       </div>
     </div>
   </header>
@@ -137,7 +146,97 @@
           </div>
         </article>
 
+        <!-- Tarjeta Acción Extra -->
+        <article class="catalogo-card" data-category="accion">
+          <div class="catalogo-card__image">
+            <span class="home-badge">Acción</span>
+            <img src="../img/games/gta-v.jpg" alt="Portada de GTA V" loading="lazy" />
+            <button class="catalogo-card__favorite" type="button" aria-label="Añadir a favoritos">♡</button>
+          </div>
+          <div class="catalogo-card__content">
+            <h3>Grand Theft Auto V</h3>
+            <div class="catalogo-card__rating" aria-label="5 estrellas">★★★★★</div>
+            <div class="catalogo-card__bottom">
+              <strong>$19.99</strong>
+              <a href="detalles/detalle-gta.html" class="home-btn home-btn--primary home-btn--small">Ver más</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tarjeta Terror Extra -->
+        <article class="catalogo-card" data-category="terror">
+          <div class="catalogo-card__image">
+            <span class="home-badge">Terror</span>
+            <img src="../img/games/left4dead.jpg" alt="Portada de Left 4 Dead 2" loading="lazy" />
+            <button class="catalogo-card__favorite" type="button" aria-label="Añadir a favoritos">♡</button>
+          </div>
+          <div class="catalogo-card__content">
+            <h3>Left 4 Dead 2</h3>
+            <div class="catalogo-card__rating" aria-label="4.8 estrellas">★★★★☆</div>
+            <div class="catalogo-card__bottom">
+              <strong>$9.99</strong>
+              <a href="detalles/detalle-l4d.html" class="home-btn home-btn--primary home-btn--small">Ver más</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tarjeta Acción Extra -->
+        <article class="catalogo-card" data-category="accion">
+          <div class="catalogo-card__image">
+            <span class="home-badge">Acción</span>
+            <img src="../img/games/freefire.jpg" alt="Portada de Free Fire" loading="lazy" />
+            <button class="catalogo-card__favorite" type="button" aria-label="Añadir a favoritos">♡</button>
+          </div>
+          <div class="catalogo-card__content">
+            <h3>Free Fire MAX</h3>
+            <div class="catalogo-card__rating" aria-label="4.5 estrellas">★★★★☆</div>
+            <div class="catalogo-card__bottom">
+              <strong>Gratis</strong>
+              <a href="detalles/detalle-freefire.html" class="home-btn home-btn--primary home-btn--small">Ver más</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tarjeta RPG Extra -->
+        <article class="catalogo-card" data-category="rpg">
+          <div class="catalogo-card__image">
+            <span class="home-badge">RPG</span>
+            <img src="../img/games/minecraft.jpg" alt="Portada de Minecraft" loading="lazy" />
+            <button class="catalogo-card__favorite" type="button" aria-label="Añadir a favoritos">♡</button>
+          </div>
+          <div class="catalogo-card__content">
+            <h3>Minecraft</h3>
+            <div class="catalogo-card__rating" aria-label="5 estrellas">★★★★★</div>
+            <div class="catalogo-card__bottom">
+              <strong>$29.99</strong>
+              <a href="detalles/detalle-minecraft.html" class="home-btn home-btn--primary home-btn--small">Ver más</a>
+            </div>
+          </div>
+        </article>
+
       </section>
+
+      <!-- Paginación del Catálogo (NUEVO) -->
+      <nav class="catalogo-pagination" aria-label="Paginación de juegos">
+        <button class="pagination-btn" disabled>&laquo; Ant</button>
+        <button class="pagination-btn is-active">1</button>
+        <button class="pagination-btn">2</button>
+        <button class="pagination-btn">3</button>
+        <span class="pagination-dots">...</span>
+        <button class="pagination-btn">10</button>
+        <button class="pagination-btn">Sig &raquo;</button>
+      </nav>
+
+      <!-- Newsletter / Suscripción (NUEVO) -->
+      <section class="catalogo-newsletter">
+        <h2>¿No encuentras lo que buscas?</h2>
+        <p>Suscríbete a nuestro boletín para recibir avisos de nuevos ingresos y descuentos.</p>
+        <form class="newsletter-form" action="#" method="POST">
+          <input type="email" placeholder="Ingresa tu correo electrónico" required>
+          <button type="submit" class="home-btn home-btn--primary">Suscribirse</button>
+        </form>
+      </section>
+
     </div>
   </main>
 
@@ -159,7 +258,7 @@
             <ul>
               <li><a href="../index.html">Inicio</a></li>
               <li><a href="catalogo.html">Catálogo</a></li>
-              <li><a href="busqueda.html">Buscar</a></li>
+              <li><a href="ofertas.html">Ofertas</a></li>
             </ul>
           </div>
 
@@ -207,5 +306,4 @@
   <script src="../js/catalogo.js"></script>
   <script src="../js/busqueda.js"></script>
 </body>
-
 </html>

@@ -78,6 +78,27 @@
   box-shadow: 9px 9px 0 var(--color-primary);
 }
 
+/* Colores de Hover por Categoría (NUEVO) */
+.catalogo-card[data-category="rpg"]:hover {
+  border-color: #9d00ff;
+  box-shadow: 9px 9px 0 #9d00ff;
+}
+
+.catalogo-card[data-category="accion"]:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 9px 9px 0 var(--color-secondary);
+}
+
+.catalogo-card[data-category="deportes"]:hover {
+  border-color: var(--color-accent);
+  box-shadow: 9px 9px 0 var(--color-accent);
+}
+
+.catalogo-card[data-category="terror"]:hover {
+  border-color: #ff0000;
+  box-shadow: 9px 9px 0 #ff0000;
+}
+
 .catalogo-card__image {
   position: relative;
   overflow: hidden;
@@ -86,7 +107,7 @@
 
 .catalogo-card__image img {
   width: 100%;
-  aspect-ratio: 16 / 10; /* Multimedia responsiva con proporción fija*/
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   transition: transform 0.25s linear;
 }
@@ -95,7 +116,6 @@
   transform: scale(1.04);
 }
 
-/* Badge reutilizado de home.css pero reposicionado */
 .catalogo-card__image .home-badge {
   position: absolute;
   top: 1rem;
@@ -125,7 +145,7 @@
 
 .catalogo-card__content {
   display: flex;
-  flex: 1; /* Ocupa el espacio sobrante en la tarjeta */
+  flex: 1;
   flex-direction: column;
   padding: 1.2rem;
 }
@@ -146,7 +166,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto; /* el precio y botón siempre abajo*/
+  margin-top: auto;
   padding-top: 1.2rem;
   border-top: 1px solid var(--color-muted);
 }
@@ -158,8 +178,86 @@
   color: var(--color-text);
 }
 
+/* --- Paginación (NUEVO) --- */
+.catalogo-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4rem;
+}
 
-/* Dispositivos móviles  */
+.pagination-btn {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  transition: all 0.15s linear;
+  cursor: pointer;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  transform: translate(-3px, -3px);
+  border-color: var(--color-primary);
+  box-shadow: 4px 4px 0 var(--color-primary);
+}
+
+.pagination-btn.is-active {
+  background: var(--color-accent);
+  color: #0a0a0a;
+  border-color: var(--color-text);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-dots {
+  color: var(--color-muted);
+  font-weight: bold;
+}
+
+/* --- Newsletter (NUEVO) --- */
+.catalogo-newsletter {
+  background: var(--color-surface-soft);
+  border: var(--border-width) solid var(--color-border);
+  padding: 3rem 2rem;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.catalogo-newsletter h2 {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 1rem;
+  width: min(100%, 400px);
+  background: transparent;
+  border: 2px solid var(--color-muted);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* Dispositivos móviles */
 @media (max-width: 768px) {
   .catalogo-main {
     padding: 2rem 0 3rem; 
