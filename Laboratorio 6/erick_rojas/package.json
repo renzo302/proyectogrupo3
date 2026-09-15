@@ -1,0 +1,1 @@
+{"name":"semana-6-less","version":"1.0.0","private":true,"scripts":{"build":"lessc --source-map src/less/main.less dist/css/main.css","check:less":"lessc --version"},"devDependencies":{"less":"4.9.1"},"description":"Laboratorio de arquitectura modular y compilación profesional con LESS.","main":"index.js","keywords":[],"author":"","license":"ISC","type":"commonjs"}
