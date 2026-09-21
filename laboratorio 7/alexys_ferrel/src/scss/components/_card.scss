@@ -1,0 +1,32 @@
+@use "../abstracts" as a;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: a.space(3);
+  min-inline-size: 0;
+  padding: a.space(5);
+  @include a.surface-card;
+
+  &_tag {
+    inline-size: fit-content;
+    padding: a.space(1) a.space(2);
+    color: a.$color-primary-dark;
+    background: a.$color-surface-soft;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  &_link {
+    margin-block-start: auto;
+    color: a.$color-primary-dark;
+    font-weight: 800;
+  }
+
+  &-featured {
+    @include a.surface-card;
+    border: 2px solid a.$color-primary;
+    background: linear-gradient(180deg, a.$color-surface-soft 0%, a.$color-surface 100%);
+  }
+}
