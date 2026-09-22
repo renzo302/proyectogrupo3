@@ -1,0 +1,12 @@
+{
+  "name": "alexys_ferrel-sass",
+  "version": "1.0.0",
+  "devDependencies": {
+    "sass": "1.104.1"
+  },
+  "scripts": {
+    "build:css": "sass src/scss/main.scss dist/css/main.css --style expanded --source-map",
+    "watch:css": "sass --watch src/scss/main.scss:dist/css/main.css --style expanded --source-map",
+    "build:prod": "sass src/scss/main.scss dist/css/main.css --style compressed --no-source-map"
+  }
+}
