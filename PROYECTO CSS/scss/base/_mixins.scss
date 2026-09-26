@@ -1,0 +1,98 @@
+// ==========================================================================
+// _mixins.scss
+// ==========================================================================
+
+@use 'variables' as v;
+
+/// Efecto "levantar tarjeta" al hover: transform + box-shadow duro (brutalista)
+/// y, opcionalmente, cambio de color de borde.
+/// Reproduce el patrón usado en: catalogo-card, detalle-related-card,
+/// favoritos-card, game-card (home y ofertas), offer-card, pagination-btn.
+@mixin hover-lift($shadow-color, $lift: 4px, $offset: 9px, $border-color: null) {
+  transform: translate(-#{$lift}, -#{$lift});
+  @if $border-color {
+    border-color: $border-color;
+  }
+  box-shadow: #{$offset} #{$offset} 0 #{$shadow-color};
+}
+
+/// Solo cambia borde + sombra (sin transform), para los hovers por
+/// categoría de .catalogo-card[data-category="..."]:hover
+@mixin card-accent-hover($color, $offset: 9px) {
+  border-color: $color;
+  box-shadow: #{$offset} #{$offset} 0 $color;
+}
+
+/// Hover de botones "favorito" con fondo de acento (catalogo-card__favorite,
+/// game-card__favorite en home.css)
+@mixin favorite-toggle-hover($scale: 1.04) {
+  background: var(--color-accent);
+  color: v.$color-ink;
+  transform: scale($scale);
+}
+
+/// @keyframes compartido por favoritos-card y game-card (ofertas). Debe
+/// incluirse UNA vez por hoja de salida mediante pop-in-keyframes().
+@mixin pop-in-keyframes {
+  @keyframes popIn {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/// Animación de entrada en cascada (idéntica en favoritos.css y ofertas.css:
+/// solo cambiaba el nombre de la clase, nunca los valores).
+@mixin pop-in-stagger($max: 6, $delay-step: 0.02s) {
+  animation: popIn 0.25s ease-out forwards;
+
+  @for $i from 1 through $max {
+    &:nth-child(#{$i}) {
+      animation-delay: $i * $delay-step;
+    }
+  }
+}
+
+/// Overlay rosa semitransparente al hover (idéntico en favoritos-card__image
+/// y game-card__image de ofertas.css).
+@mixin hover-tint-overlay($color: rgba(255, 45, 120, 0.12)) {
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: $color;
+    opacity: 0;
+    transition: opacity 0.15s linear;
+    z-index: 1;
+  }
+}
+
+/// Scrollbar personalizada (idéntica en .favoritos-main y .ofertas-main)
+@mixin custom-scrollbar(
+  $thumb: var(--color-primary),
+  $thumb-hover: var(--color-primary-strong),
+  $track: var(--color-surface),
+  $width: 8px
+) {
+  &::-webkit-scrollbar {
+    width: $width;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $track;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $thumb;
+    border-radius: 0;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: $thumb-hover;
+  }
+}

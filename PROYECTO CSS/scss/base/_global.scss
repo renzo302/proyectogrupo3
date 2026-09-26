@@ -1,0 +1,54 @@
+// ==========================================================================
+// _global.scss
+// ==========================================================================
+
+:root {
+  /* Paleta brutalista — negro crudo + acentos de póster (magenta, cian, amarillo, lima) */
+  --color-primary: #ff2d78;
+  --color-primary-strong: #ff0055;
+  --color-secondary: #00e5ff;
+  --color-accent: #f5e400;
+  --color-success: #ccff00;
+  --color-background: #0a0a0a;
+  --color-surface: #121212;
+  --color-surface-alt: #1a1a1a;
+  --color-surface-soft: #1f1f1f;
+  --color-text: #f5f5f0;
+  --color-muted: #9a9a92;
+  --color-border: #f5f5f0;
+
+  /* Sombras duras, sin difuminado */
+  --shadow-soft: 10px 10px 0 rgba(0, 0, 0, 0.85);
+  --shadow-card: 7px 7px 0 rgba(0, 0, 0, 0.85);
+
+  /* Radios a cero: sin curvas */
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+
+  --container-width: 1200px;
+  --border-width: 3px;
+  --font-display: 'Archivo Black', 'Arial Black', Impact, sans-serif;
+  --font-body: 'Space Mono', 'Courier New', monospace;
+}
+
+.home-shell {
+  width: min(var(--container-width), calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.home-section-tag {
+  display: inline-block;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14rem;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.home-section-tag--light {
+  color: var(--color-accent);
+}

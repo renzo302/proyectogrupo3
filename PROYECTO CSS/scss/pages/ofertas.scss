@@ -1,0 +1,208 @@
+// ==========================================================================
+// pages/ofertas.scss
+// ==========================================================================
+
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+@use '../base/reset';
+@use '../base/global';
+@use '../components/buttons';
+@use '../components/navbar';
+@use '../components/footer';
+
+@include mix.pop-in-keyframes;
+
+.ofertas-main {
+  padding: 3rem 0 5rem;
+  min-height: 60vh;
+  @include mix.custom-scrollbar;
+}
+
+/* --- Header de Ofertas --- */
+.ofertas-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.ofertas-header h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  color: #fff;
+  -webkit-text-stroke: 1px var(--color-text); /* Mantiene el estilo de borde de texto */
+}
+
+.ofertas-subtitle {
+  font-family: var(--font-body);
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}
+
+/* --- Grid de Ofertas --- */
+.ofertas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Tarjeta de Juego --- */
+.game-card {
+  background: var(--color-surface);
+  border-radius: 0;
+  border: var(--border-width) solid var(--color-border);
+  overflow: hidden;
+  transition: transform v.$transition-fast, box-shadow v.$transition-fast, border-color v.$transition-fast;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  @include mix.pop-in-stagger;
+}
+
+.game-card:hover {
+  @include mix.hover-lift(var(--color-primary), 6px, 10px);
+}
+
+/* --- Imagen de la Tarjeta --- */
+.game-card__image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-bottom: var(--border-width) solid var(--color-border);
+  @include mix.hover-tint-overlay;
+}
+
+.game-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform v.$transition-medium;
+}
+
+.game-card:hover .game-card__image img {
+  transform: scale(1.04);
+}
+
+.game-card:hover .game-card__image::after {
+  opacity: 1;
+}
+
+/* Etiqueta de Descuento */
+.game-discount-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 0;
+  background: var(--color-primary-strong);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  border: 2px solid var(--color-text);
+  box-shadow: 4px 4px 0 #000;
+  transform: rotate(5deg);
+  z-index: 2;
+}
+
+/* --- Contenido de la Tarjeta --- */
+.game-card__info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+.game-card__info h3 {
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.8rem;
+  color: var(--color-text);
+}
+
+/* --- Precios --- */
+.game-pricing {
+  display: flex;
+  justify-content: space-between; /* Separa los precios  */
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  margin-bottom: 1rem;
+  border-top: 2px solid var(--color-muted);
+}
+
+.price-old {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-muted);
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--color-primary); /* Línea de tachado rosa */
+}
+
+.price-new {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  color: var(--color-success); /* Verde neón para el precio final */
+}
+
+/* Botón VER OFERTA */
+.game-card__info .home-btn {
+  width: 100%;
+}
+
+@media (max-width: v.$bp-xl) {
+  .ofertas-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: v.$bp-sm) {
+  .ofertas-main {
+    padding: 2rem 0 3rem;
+  }
+  .ofertas-header h1 {
+    font-size: 2.2rem;
+  }
+  .ofertas-subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: v.$bp-xs) {
+  .ofertas-main {
+    padding: 1.5rem 0 3rem;
+  }
+  .ofertas-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .ofertas-header h1 {
+    font-size: 1.8rem;
+  }
+  .game-card__image {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: v.$bp-2xs) {
+  .game-discount-badge {
+    top: 0.6rem;
+    right: 0.6rem;
+    font-size: 1rem;
+    padding: 0.2rem 0.6rem;
+  }
+  .game-card__info {
+    padding: 0.9rem;
+  }
+  .game-card__info h3 {
+    font-size: 1.1rem;
+  }
+  .price-new {
+    font-size: 1.4rem;
+  }
+}

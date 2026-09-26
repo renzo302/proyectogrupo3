@@ -1,0 +1,24 @@
+// ==========================================================================
+// _variables.scss
+// ==========================================================================
+
+// --- Breakpoints (recopilados de los 6 archivos originales) ---
+$bp-xl: 1024px;      // catalogo, detalle, favoritos, ofertas
+$bp-lg: 980px;        // home (hero/footer)
+$bp-md-plus: 900px;   // detalle (hero grid a 1 columna)
+$bp-md: 820px;        // home (nav -> menu toggle)
+$bp-sm: 768px;        // catalogo, detalle, favoritos, ofertas
+$bp-xs: 640px;        // home, favoritos, ofertas
+$bp-2xs: 480px;       // detalle, favoritos, ofertas
+
+// --- Transiciones repetidas ---
+$transition-fast: 0.15s linear;      // hovers, bordes, sombras
+$transition-medium: 0.25s linear;    // zoom de imágenes
+$transition-medium-alt: 0.2s linear; // zoom de imágenes (detalle-related-card)
+$transition-color: 0.3s ease;        // search-box
+
+// --- Colores utilitarios sin custom property propia en el CSS original ---
+$color-ink: #0a0a0a;          // texto sobre fondos de acento/primario
+$color-danger: #ff4d4d;       // botón "eliminar" en favoritos
+$color-search-border: #ff2d78;   // borde del buscador (global.css)
+$color-search-focus: #fceb00;    // foco del buscador (global.css)

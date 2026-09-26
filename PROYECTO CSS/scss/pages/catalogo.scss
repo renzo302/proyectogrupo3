@@ -1,0 +1,282 @@
+// ==========================================================================
+// pages/catalogo.scss
+// ==========================================================================
+
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+@use '../base/reset';
+@use '../base/global';
+@use '../components/buttons';
+@use '../components/navbar';
+@use '../components/footer';
+@use '../components/badges';
+
+.catalogo-main {
+  padding: 4rem 0 6rem;
+}
+
+.catalogo-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.catalogo-header h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+
+.catalogo-header p {
+  font-family: var(--font-body);
+  color: var(--color-muted);
+}
+
+/* --- Filtros (Flexbox) --- */
+.catalogo-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 3rem;
+}
+
+.catalogo-btn-filtro {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+  padding: 0.6rem 1.2rem;
+  border-radius: 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  transition: all v.$transition-fast;
+}
+
+.catalogo-btn-filtro:hover {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.catalogo-btn-filtro.is-active {
+  background: var(--color-primary);
+  color: v.$color-ink;
+  border-color: var(--color-text);
+  box-shadow: 4px 4px 0 var(--color-text);
+}
+
+/* --- Cuadrícula (CSS Grid) --- */
+.catalogo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: 1.5rem;
+}
+
+/* --- Tarjeta del Catálogo (Flexbox anidado) --- */
+.catalogo-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-surface);
+  transition: transform v.$transition-fast, border-color v.$transition-fast, box-shadow v.$transition-fast;
+  box-shadow: var(--shadow-card);
+}
+
+.catalogo-card:hover {
+  @include mix.hover-lift(var(--color-primary), 4px, 9px, var(--color-primary));
+}
+
+/* Colores de Hover por Categoría (NUEVO) */
+.catalogo-card[data-category="rpg"]:hover {
+  @include mix.card-accent-hover(#9d00ff);
+}
+
+.catalogo-card[data-category="accion"]:hover {
+  @include mix.card-accent-hover(var(--color-secondary));
+}
+
+.catalogo-card[data-category="deportes"]:hover {
+  @include mix.card-accent-hover(var(--color-accent));
+}
+
+.catalogo-card[data-category="terror"]:hover {
+  @include mix.card-accent-hover(#ff0000);
+}
+
+.catalogo-card__image {
+  position: relative;
+  overflow: hidden;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.catalogo-card__image img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  transition: transform v.$transition-medium-alt;
+}
+
+.catalogo-card:hover .catalogo-card__image img {
+  transform: scale(1.04);
+}
+
+.catalogo-card__image .home-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+}
+
+.catalogo-card__favorite {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+  transition: background v.$transition-fast, transform v.$transition-fast;
+}
+
+.catalogo-card__favorite:hover {
+  @include mix.favorite-toggle-hover(1.08);
+}
+
+.catalogo-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+.catalogo-card__content h3 {
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.4rem;
+}
+
+.catalogo-card__rating {
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+}
+
+.catalogo-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--color-muted);
+}
+
+.catalogo-card__bottom strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+/* --- Paginación (NUEVO) --- */
+.catalogo-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4rem;
+}
+
+.pagination-btn {
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  transition: all v.$transition-fast;
+  cursor: pointer;
+}
+
+.pagination-btn:hover:not(:disabled) {
+  @include mix.hover-lift(var(--color-primary), 3px, 4px, var(--color-primary));
+}
+
+.pagination-btn.is-active {
+  background: var(--color-accent);
+  color: v.$color-ink;
+  border-color: var(--color-text);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-dots {
+  color: var(--color-muted);
+  font-weight: bold;
+}
+
+/* --- Newsletter (NUEVO) --- */
+.catalogo-newsletter {
+  background: var(--color-surface-soft);
+  border: var(--border-width) solid var(--color-border);
+  padding: 3rem 2rem;
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.catalogo-newsletter h2 {
+  font-size: 2rem;
+  color: var(--color-secondary);
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.newsletter-form input {
+  padding: 1rem;
+  width: min(100%, 400px);
+  background: transparent;
+  border: 2px solid var(--color-muted);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+.newsletter-form input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+}
+
+/* Dispositivos móviles */
+@media (max-width: v.$bp-sm) {
+  .catalogo-main {
+    padding: 2rem 0 3rem;
+  }
+  .catalogo-filtros {
+    gap: 0.5rem;
+  }
+  .catalogo-btn-filtro {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* Tabletas y pantallas medianas */
+@media (min-width: 769px) and (max-width: v.$bp-xl) {
+  .catalogo-grid {
+    gap: 1rem;
+  }
+}

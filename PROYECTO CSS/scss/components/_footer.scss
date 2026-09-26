@@ -1,0 +1,91 @@
+// ==========================================================================
+// _footer.scss
+// ==========================================================================
+
+@use '../base/variables' as v;
+
+.home-footer {
+  padding: 4rem 0 2rem;
+  border-top: var(--border-width) solid var(--color-text);
+  background: var(--color-background);
+}
+
+.home-footer__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-bottom: 2rem;
+}
+
+.home-footer__brand {
+  max-width: 230px;
+}
+
+.home-footer__brand p {
+  margin-top: 1rem;
+  font-family: var(--font-body);
+  color: var(--color-muted);
+}
+
+.home-footer__columns {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+  flex: 1;
+}
+
+.home-footer__columns h3 {
+  margin-bottom: 0.95rem;
+  font-size: 1rem;
+}
+
+.home-footer__columns li + li {
+  margin-top: 0.7rem;
+}
+
+.home-footer__columns a {
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  transition: color v.$transition-fast;
+}
+
+.home-footer__columns a:hover,
+.home-footer__links a:hover {
+  color: var(--color-accent);
+}
+
+.home-footer__bottom {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--color-muted);
+  color: var(--color-muted);
+  font-family: var(--font-body);
+}
+
+.home-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+// Responsive (home.css @media 980px / 640px)
+@media (max-width: v.$bp-lg) {
+  .home-footer__top {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: v.$bp-xs) {
+  .home-footer__columns {
+    grid-template-columns: 1fr;
+  }
+
+  .home-footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

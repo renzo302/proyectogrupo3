@@ -1,0 +1,610 @@
+// ==========================================================================
+// pages/home.scss
+// ==========================================================================
+
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+@use '../base/reset';
+@use '../base/global';
+@use '../components/buttons';
+@use '../components/navbar';
+@use '../components/footer';
+@use '../components/badges';
+
+// --- Hero ---
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  border-bottom: var(--border-width) solid var(--color-text);
+}
+
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.55);
+}
+
+.home-hero__content {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+  align-items: end;
+  gap: 2rem;
+  min-height: 700px;
+  padding: 5rem 0 4rem;
+}
+
+.home-hero__copy {
+  max-width: 620px;
+}
+
+.home-kicker {
+  margin-bottom: 1rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+}
+
+.home-hero h1 {
+  font-size: clamp(2.9rem, 5vw, 5rem);
+  line-height: 0.94;
+  letter-spacing: -0.02em;
+  font-weight: 900;
+  text-wrap: balance;
+}
+
+.home-hero__text {
+  max-width: 560px;
+  margin-top: 1.3rem;
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  color: var(--color-muted);
+}
+
+.home-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.home-hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 2.2rem;
+}
+
+.home-hero__stats li {
+  min-width: 124px;
+  padding: 0.9rem 1rem;
+  border-radius: 0;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-text);
+}
+
+.home-hero__stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--color-text);
+}
+
+.home-hero__stats span {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.home-hero__panel {
+  position: relative;
+  padding: 1rem;
+  border-radius: 0;
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-text);
+  box-shadow: var(--shadow-soft);
+  transform: translateY(18px);
+}
+
+// Agrupación original (sin .home-footer__bottom: ver components/_footer.scss)
+.home-hero__panel-top,
+.home-hero__panel-body,
+.game-card__content,
+.offer-card__content,
+.home-seller {
+  position: relative;
+}
+
+.home-hero__panel-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.85rem;
+}
+
+.home-favorite-button {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+  transition: transform v.$transition-fast, background v.$transition-fast;
+}
+
+.home-favorite-button:hover {
+  transform: scale(1.06);
+  background: var(--color-primary);
+  color: v.$color-ink;
+}
+
+.home-hero__panel-image {
+  overflow: hidden;
+  border-radius: 0;
+  border: var(--border-width) solid var(--color-text);
+}
+
+.home-hero__panel-body {
+  padding: 1.2rem 0.4rem 0.2rem;
+}
+
+.home-game-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 0.85rem;
+}
+
+.home-game-meta span {
+  padding: 0.35rem 0.6rem;
+  border-radius: 0;
+  border: 2px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.home-hero__panel-body h2 {
+  font-size: clamp(1.8rem, 2vw, 2.3rem);
+  letter-spacing: -0.02em;
+}
+
+.home-hero__rating {
+  margin-top: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
+.home-price-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.home-price-label {
+  font-family: var(--font-body);
+  font-size: 0.76rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.home-price-row strong {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  letter-spacing: -0.02em;
+}
+
+.home-price-old {
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+
+// --- Secciones ---
+.home-featured,
+.home-offers,
+.home-sellers {
+  padding: 5.5rem 0 0;
+}
+
+.home-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.home-section-heading h2 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  letter-spacing: -0.02em;
+}
+
+.home-section-heading a {
+  color: var(--color-secondary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+}
+
+.home-featured__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+// --- Tarjeta de juego destacado (variante home) ---
+.game-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  transition: transform v.$transition-fast, box-shadow v.$transition-fast, border-color v.$transition-fast;
+}
+
+.game-card:hover {
+  @include mix.hover-lift(var(--color-primary), 4px, 10px, var(--color-primary));
+}
+
+.game-card__image {
+  position: relative;
+  overflow: hidden;
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+.game-card__image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform v.$transition-medium;
+}
+
+.game-card:hover .game-card__image img {
+  transform: scale(1.04);
+}
+
+.game-card__favorite {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0;
+  background: var(--color-background);
+  color: var(--color-text);
+  border: 2px solid var(--color-text);
+  transition: background v.$transition-fast, transform v.$transition-fast;
+}
+
+.game-card__favorite:hover {
+  @include mix.favorite-toggle-hover(1.04);
+}
+
+.game-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.1rem 1.15rem 1.2rem;
+}
+
+.game-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.game-card__meta span {
+  padding: 0.38rem 0.65rem;
+  border-radius: 0;
+  border: 1px solid var(--color-muted);
+}
+
+.game-card h3 {
+  font-size: 1.28rem;
+  letter-spacing: -0.02em;
+}
+
+.game-card__rating {
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.game-card__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: auto;
+}
+
+.game-card__button {
+  min-height: 40px;
+  padding: 0.65rem 0.9rem;
+  border-radius: 0;
+  background: var(--color-primary);
+  color: v.$color-ink;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 2px solid var(--color-text);
+  transition: transform v.$transition-fast;
+}
+
+.game-card__button:hover {
+  transform: translate(-2px, -2px);
+}
+
+.home-offers__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.4rem;
+}
+
+.offer-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--color-surface-alt);
+  border: var(--border-width) solid var(--color-primary);
+  box-shadow: var(--shadow-card);
+  transition: transform v.$transition-fast, box-shadow v.$transition-fast;
+}
+
+.offer-card:hover {
+  @include mix.hover-lift(var(--color-primary), 4px, 10px);
+}
+
+.offer-card__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  padding: 0.45rem 0.7rem;
+  border-radius: 0;
+  background: var(--color-accent);
+  color: v.$color-ink;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  border: 2px solid var(--color-text);
+}
+
+.offer-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: var(--border-width) solid var(--color-primary);
+  filter: saturate(1.1) contrast(1.1);
+}
+
+.offer-card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.1rem 1rem 1.2rem;
+}
+
+.offer-card h3 {
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+}
+
+.offer-card__prices {
+  display: flex;
+  align-items: end;
+  gap: 0.8rem;
+}
+
+.offer-card__old {
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+
+.offer-card__prices strong {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+}
+
+.home-sellers__list {
+  display: grid;
+  gap: 1rem;
+}
+
+.home-seller {
+  display: grid;
+  grid-template-columns: 52px 82px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.95rem 1rem;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-surface);
+  transition: border-color v.$transition-fast, transform v.$transition-fast;
+}
+
+.home-seller:hover {
+  border-color: var(--color-secondary);
+  transform: translateX(4px);
+}
+
+.home-seller__rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 0;
+  background: var(--color-secondary);
+  color: v.$color-ink;
+  font-family: var(--font-display);
+  border: 2px solid var(--color-text);
+}
+
+.home-seller img {
+  width: 82px;
+  height: 82px;
+  object-fit: cover;
+  border-radius: 0;
+  border: 2px solid var(--color-text);
+}
+
+.home-seller__info h3 {
+  margin-bottom: 0.35rem;
+  font-size: 1.1rem;
+}
+
+.home-seller__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  font-size: 0.79rem;
+}
+
+.home-seller__price {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+}
+
+// --- Banner ---
+.home-banner {
+  padding: 5.5rem 0 4rem;
+}
+
+.home-banner__content {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: clamp(1.8rem, 3vw, 3.2rem);
+  border-radius: 0;
+  background: var(--color-primary);
+  border: var(--border-width) solid var(--color-text);
+  box-shadow: var(--shadow-soft);
+}
+
+.home-banner__content::before {
+  content: "";
+  position: absolute;
+  inset: 0 -4rem 0 auto;
+  width: 12rem;
+  background: var(--color-accent);
+  transform: skewX(-12deg);
+}
+
+.home-banner__content h2 {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: v.$color-ink;
+}
+
+.home-banner__content .home-btn {
+  position: relative;
+  z-index: 1;
+}
+
+// --- Responsive ---
+@media (max-width: v.$bp-lg) {
+  .home-hero__content {
+    grid-template-columns: 1fr;
+    align-items: center;
+    padding-top: 4rem;
+  }
+
+  .home-featured__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-offers__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: v.$bp-md) {
+  .home-nav {
+    display: none;
+  }
+
+  .home-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-header__actions .home-btn--primary {
+    display: none;
+  }
+
+  .home-banner__content::before {
+    inset: 0 -4rem 0 45%;
+  }
+}
+
+@media (max-width: v.$bp-xs) {
+  .home-hero__content {
+    min-height: 620px;
+  }
+
+  .home-featured__grid,
+  .home-offers__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-header__inner {
+    min-height: 74px;
+  }
+
+  .home-btn--large {
+    width: 100%;
+  }
+
+  .home-hero__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .home-seller {
+    grid-template-columns: 44px 72px minmax(0, 1fr);
+  }
+
+  .home-seller__price {
+    grid-column: 2 / -1;
+    justify-self: start;
+    margin-left: 0.4rem;
+  }
+}

@@ -1,0 +1,380 @@
+// ==========================================================================
+// pages/favoritos.scss
+// ==========================================================================
+
+@use '../base/variables' as v;
+@use '../base/mixins' as mix;
+@use '../base/reset';
+@use '../base/global';
+@use '../components/buttons';
+@use '../components/navbar';
+@use '../components/footer';
+
+@include mix.pop-in-keyframes;
+
+.favoritos-main {
+  padding: 3rem 0 5rem;
+  min-height: 60vh;
+  @include mix.custom-scrollbar;
+}
+
+/* --- Header de favoritos --- */
+.favoritos-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.favoritos-header h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  -webkit-text-stroke: 1px var(--color-text);
+}
+
+.favoritos-subtitle {
+  font-family: var(--font-body);
+  color: var(--color-muted);
+  font-size: 1.1rem;
+}
+
+/* --- Estadísticas --- */
+.favoritos-stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.favoritos-count {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0;
+  background: var(--color-surface);
+  border: 2px solid var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--color-text);
+}
+
+/* --- Grid de favoritos --- */
+.favoritos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+/* --- Card de favorito --- */
+.favoritos-card {
+  background: var(--color-surface);
+  border-radius: 0;
+  border: var(--border-width) solid var(--color-border);
+  overflow: hidden;
+  transition: transform v.$transition-fast, box-shadow v.$transition-fast, border-color v.$transition-fast;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  @include mix.pop-in-stagger;
+}
+
+.favoritos-card:hover {
+  @include mix.hover-lift(var(--color-primary), 6px, 10px, var(--color-primary));
+}
+
+/* --- Imagen de la card --- */
+.favoritos-card__image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-bottom: var(--border-width) solid var(--color-border);
+  @include mix.hover-tint-overlay;
+}
+
+.favoritos-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform v.$transition-medium;
+}
+
+.favoritos-card:hover .favoritos-card__image img {
+  transform: scale(1.04);
+}
+
+.favoritos-card:hover .favoritos-card__image::after {
+  opacity: 1;
+}
+
+/* Badge en la imagen */
+.favoritos-card__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.3rem 0.9rem;
+  border-radius: 0;
+  background: var(--color-primary);
+  color: v.$color-ink;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+  text-transform: uppercase;
+  border: 2px solid var(--color-text);
+  z-index: 2;
+}
+
+.favoritos-card__badge--gratis {
+  background: var(--color-success);
+  color: v.$color-ink;
+  border-color: var(--color-text);
+  left: auto;
+  right: 1rem;
+}
+
+/* --- Contenido de la card --- */
+.favoritos-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+
+.favoritos-card__content h3 {
+  font-size: 1.2rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.3rem;
+  color: var(--color-text);
+}
+
+.favoritos-card__rating {
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+/* --- Parte inferior de la card --- */
+.favoritos-card__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 0.8rem;
+  border-top: 2px solid var(--color-muted);
+}
+
+.favoritos-card__price {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.favoritos-card__actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* --- Botones de la card --- */
+.favoritos-card__btn {
+  padding: 0.4rem 0.9rem;
+  border-radius: 0;
+  border: 2px solid var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all v.$transition-fast;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+}
+
+/* Botón VER */
+.favoritos-card__btn--view {
+  background: transparent;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.favoritos-card__btn--view:hover {
+  background: var(--color-primary);
+  color: v.$color-ink;
+  transform: translate(-2px, -2px);
+  box-shadow: 3px 3px 0 var(--color-text);
+}
+
+/* Botón ELIMINAR */
+.favoritos-card__btn--remove {
+  background: transparent;
+  color: v.$color-danger;
+  border: 2px solid v.$color-danger;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.7rem;
+}
+
+.favoritos-card__btn--remove:hover {
+  background: v.$color-danger;
+  color: v.$color-ink;
+  transform: scale(1.05);
+}
+
+/* --- Estado vacío --- */
+.favoritos-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  margin: 2rem 0;
+  border: var(--border-width) dashed var(--color-muted);
+  border-radius: 0;
+  background: var(--color-surface);
+}
+
+.favoritos-empty__icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.favoritos-empty h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-text);
+}
+
+.favoritos-empty p {
+  font-family: var(--font-body);
+  color: var(--color-muted);
+  margin-bottom: 1.5rem;
+}
+
+.favoritos-empty .home-btn {
+  display: inline-flex;
+}
+
+/* Tablets y pantallas medianas */
+@media (max-width: v.$bp-xl) {
+  .favoritos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Móviles grandes */
+@media (max-width: v.$bp-sm) {
+  .favoritos-main {
+    padding: 2rem 0 3rem;
+  }
+
+  .favoritos-header h1 {
+    font-size: 2.2rem;
+  }
+
+  .favoritos-subtitle {
+    font-size: 1rem;
+  }
+
+  .favoritos-card__price {
+    font-size: 1.2rem;
+  }
+}
+
+/* Móviles pequeños */
+@media (max-width: v.$bp-xs) {
+  .favoritos-main {
+    padding: 1.5rem 0 3rem;
+  }
+
+  .favoritos-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .favoritos-card__bottom {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: stretch;
+  }
+
+  .favoritos-card__actions {
+    justify-content: stretch;
+  }
+
+  .favoritos-card__btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  .favoritos-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .favoritos-empty {
+    padding: 2.5rem 1rem;
+  }
+
+  .favoritos-empty h2 {
+    font-size: 1.5rem;
+  }
+
+  .favoritos-card__image {
+    aspect-ratio: 16 / 10;
+  }
+
+  .favoritos-count {
+    font-size: 0.85rem;
+    padding: 0.4rem 1.2rem;
+  }
+}
+
+/* Móviles muy pequeños */
+@media (max-width: v.$bp-2xs) {
+  .favoritos-card__badge {
+    top: 0.6rem;
+    left: 0.6rem;
+    font-size: 0.6rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  .favoritos-card__badge--gratis {
+    right: 0.6rem;
+    left: auto;
+  }
+
+  .favoritos-card__content {
+    padding: 0.9rem;
+  }
+
+  .favoritos-card__content h3 {
+    font-size: 1rem;
+  }
+
+  .favoritos-card__rating {
+    font-size: 0.8rem;
+  }
+
+  .favoritos-card__price {
+    font-size: 1.1rem;
+  }
+
+  .favoritos-card__btn {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.7rem;
+    min-height: 32px;
+  }
+
+  .favoritos-empty__icon {
+    font-size: 3rem;
+  }
+
+  .favoritos-empty h2 {
+    font-size: 1.2rem;
+  }
+SS
+  .favoritos-empty p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,58 @@
+// ==========================================================================
+// _buttons.scss
+// ==========================================================================
+
+@use '../base/variables' as v;
+
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  border: var(--border-width) solid var(--color-text);
+  transition: transform v.$transition-fast, box-shadow v.$transition-fast, background v.$transition-fast;
+}
+
+.home-btn:hover {
+  transform: translate(-3px, -3px);
+}
+
+.home-btn--primary {
+  background: var(--color-primary);
+  color: v.$color-ink;
+  box-shadow: 6px 6px 0 var(--color-text);
+}
+
+.home-btn--secondary {
+  background: var(--color-background);
+  color: var(--color-text);
+  box-shadow: 6px 6px 0 var(--color-secondary);
+}
+
+.home-btn--ghost {
+  background: transparent;
+  border: var(--border-width) dashed var(--color-muted);
+  color: var(--color-text);
+  box-shadow: none;
+}
+
+.home-btn--ghost:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  transform: none;
+}
+
+.home-btn--large {
+  min-height: 52px;
+  padding: 0.95rem 1.6rem;
+}
+
+.home-btn--small {
+  min-height: 42px;
+  padding: 0.7rem 1.1rem;
+}
