@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "private": true,
   "scripts": {
-    "sass": "sass --watch scss/pages/home.scss:css/home.css scss/pages/catalogo.scss:css/catalogo.css scss/pages/detalle.scss:css/detalle.css scss/pages/favoritos.scss:css/favoritos.css scss/pages/ofertas.scss:css/ofertas.css"
+    "sass": "sass --watch scss/pages/home.scss:css/home.css scss/pages/catalogo.scss:css/catalogo.css scss/pages/detalle.scss:css/detalle.css scss/pages/favoritos.scss:css/favoritos.css scss/pages/ofertas.scss:css/ofertas.css scss/pages/carrito.scss:css/carrito.css"
   },
   "devDependencies": {
     "sass": "^1.93.2"

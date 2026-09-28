@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Revisa los videojuegos agregados a tu carrito de GAMEHUB." />
+  <title>GAMEHUB | Carrito</title>
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/home.css" />
+  <link rel="stylesheet" href="../css/carrito.css" />
+</head>
+<body>
+  <header class="home-header">
+    <div class="home-shell home-header__inner">
+      <a href="../index.html" class="home-brand" aria-label="Ir al inicio de GAMEHUB">
+        <span class="home-brand__mark">G</span>
+        <span>GAMEHUB</span>
+      </a>
+      <nav class="home-nav" aria-label="Navegación principal">
+        <a href="../index.html">Inicio</a>
+        <a href="catalogo.html">Catálogo</a>
+        <a href="ofertas.html">Ofertas</a>
+        <a href="favoritos.html">Favoritos</a>
+      </nav>
+      <div class="home-header__actions">
+        <a class="home-btn home-btn--ghost" href="favoritos.html">Favoritos</a>
+        <a class="home-btn home-btn--primary" href="carrito.html" aria-current="page">Carrito</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-main">
+    <div class="home-shell">
+      <header class="cart-heading">
+        <div>
+          <p class="home-section-tag">GAMEHUB / COMPRA</p>
+          <h1>Tu carrito</h1>
+        </div>
+        <p id="cart-count" aria-live="polite">0 productos</p>
+      </header>
+
+      <section id="cart-empty" class="cart-empty" aria-live="polite">
+        <h2>Tu carrito está vacío</h2>
+        <p>Explora el catálogo y agrega los juegos que quieras llevar.</p>
+        <a class="home-btn home-btn--primary" href="catalogo.html">Explorar catálogo</a>
+      </section>
+
+      <div id="cart-layout" class="cart-layout" hidden>
+        <section id="cart-items" class="cart-items" aria-label="Productos en el carrito"></section>
+        <aside class="cart-summary" aria-labelledby="cart-summary-title">
+          <h2 id="cart-summary-title">Resumen</h2>
+          <p><span>Productos</span><span id="cart-count-summary">0</span></p>
+          <p class="cart-summary__total"><span>Total</span><strong id="cart-total">$0.00</strong></p>
+          <button id="cart-clear" class="home-btn home-btn--ghost" type="button">Vaciar carrito</button>
+          <a class="home-btn home-btn--primary" href="catalogo.html">Seguir comprando</a>
+          <small>Esta demostración no procesa pagos.</small>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="home-footer">
+    <div class="home-shell home-footer__bottom">
+      <span>© 2026 GAMEHUB. Todos los derechos reservados.</span>
+      <a href="../index.html">Volver al inicio</a>
+    </div>
+  </footer>
+
+  <script src="../js/carrito.js"></script>
+</body>
+</html>

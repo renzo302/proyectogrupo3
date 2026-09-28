@@ -9,7 +9,6 @@
   <title>GAMEHUB | Inicio</title>
   <link rel="stylesheet" href="css/global.css" />
   <link rel="stylesheet" href="css/home.css" />
-  <link rel="stylesheet" href="css/home-sass.css" />
   <link rel="stylesheet" href="css/catalogo.css" />
 
 </head>
@@ -43,8 +42,8 @@
       </div>
 
         <button class="home-menu-toggle" type="button" aria-label="Abrir menú">☰</button>
-        <a class="home-btn home-btn--ghost" href="pages/favoritos.html">perfil</a>
-        <a class="home-btn home-btn--primary" href="pages/busqueda.html">carrito</a>
+        <a class="home-btn home-btn--ghost" href="pages/favoritos.html">Favoritos</a>
+        <a class="home-btn home-btn--primary" href="pages/carrito.html">Carrito</a>
       </div>
     </div>
   </header>
@@ -143,7 +142,7 @@
               <div class="game-card__bottom">
                 <strong>$29.99</strong>
                 <div class="game-card__buttons">
-                  <button class="game-card__button game-card__button--buy" type="button">Comprar</button>
+                  <button class="game-card__button game-card__button--buy" type="button" data-cart-add>Comprar</button>
                   <a href="pages/detalles/detalle-minecraft.html" class="game-card__button game-card__button--view">Ver
                     más</a>
                 </div>
@@ -166,7 +165,7 @@
               <div class="game-card__bottom">
                 <strong>$0.00</strong>
                 <div class="game-card__buttons">
-                  <button class="game-card__button game-card__button--buy" type="button">Comprar</button>
+                  <button class="game-card__button game-card__button--buy" type="button" data-cart-add>Comprar</button>
                   <a href="pages/detalles/detalle-fortnite.html" class="game-card__button game-card__button--view">Ver
                     más</a>
                 </div>
@@ -189,7 +188,7 @@
               <div class="game-card__bottom">
                 <strong>$39.99</strong>
                 <div class="game-card__buttons">
-                  <button class="game-card__button game-card__button--buy" type="button">Comprar</button>
+                  <button class="game-card__button game-card__button--buy" type="button" data-cart-add>Comprar</button>
                   <a href="pages/detalles/detalle-witcher.html" class="game-card__button game-card__button--view">Ver
                     más</a>
                 </div>
@@ -212,7 +211,7 @@
               <div class="game-card__bottom">
                 <strong>$0.00</strong>
                 <div class="game-card__buttons">
-                  <button class="game-card__button game-card__button--buy" type="button">Comprar</button>
+                  <button class="game-card__button game-card__button--buy" type="button" data-cart-add>Comprar</button>
                   <a href="pages/detalles/detalle-apex.html" class="game-card__button game-card__button--view">Ver
                     más</a>
                 </div>
@@ -245,7 +244,7 @@
                 <span class="offer-card__old">$69.99</span>
                 <strong>$45.49</strong>
               </div>
-              <button class="home-btn home-btn--primary home-btn--small" type="button">Comprar</button>
+              <button class="home-btn home-btn--primary home-btn--small" type="button" data-cart-add>Comprar</button>
             </div>
           </article>
 
@@ -258,7 +257,7 @@
                 <span class="offer-card__old">$59.99</span>
                 <strong>$41.99</strong>
               </div>
-              <button class="home-btn home-btn--primary home-btn--small" type="button">Comprar</button>
+              <button class="home-btn home-btn--primary home-btn--small" type="button" data-cart-add>Comprar</button>
             </div>
           </article>
 
@@ -271,7 +270,7 @@
                 <span class="offer-card__old">$39.99</span>
                 <strong>$29.99</strong>
               </div>
-              <button class="home-btn home-btn--primary home-btn--small" type="button">Comprar</button>
+              <button class="home-btn home-btn--primary home-btn--small" type="button" data-cart-add>Comprar</button>
             </div>
           </article>
         </div>
@@ -398,6 +397,7 @@
     </div>
   </footer>
   <script src="js/busqueda.js"></script>
+  <script src="js/carrito.js"></script>
 </body>
 
 </html>
