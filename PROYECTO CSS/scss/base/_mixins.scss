@@ -2,17 +2,25 @@
 // _mixins.scss
 // ==========================================================================
 
-@use 'variables' as v;
+@use 'variables'as v;
 
 /// Efecto "levantar tarjeta" al hover: transform + box-shadow duro (brutalista)
 /// y, opcionalmente, cambio de color de borde.
 /// Reproduce el patrón usado en: catalogo-card, detalle-related-card,
 /// favoritos-card, game-card (home y ofertas), offer-card, pagination-btn.
-@mixin hover-lift($shadow-color, $lift: 4px, $offset: 9px, $border-color: null) {
+@mixin hover-lift(
+  $shadow-color, 
+  $lift: 4px, 
+  $offset: 9px, 
+  $border-color: null) 
+  
+  {
   transform: translate(-#{$lift}, -#{$lift});
+
   @if $border-color {
     border-color: $border-color;
   }
+
   box-shadow: #{$offset} #{$offset} 0 #{$shadow-color};
 }
 
@@ -39,6 +47,7 @@
       opacity: 0;
       transform: translateY(14px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
@@ -73,12 +82,10 @@
 }
 
 /// Scrollbar personalizada (idéntica en .favoritos-main y .ofertas-main)
-@mixin custom-scrollbar(
-  $thumb: var(--color-primary),
+@mixin custom-scrollbar($thumb: var(--color-primary),
   $thumb-hover: var(--color-primary-strong),
   $track: var(--color-surface),
-  $width: 8px
-) {
+  $width: 8px) {
   &::-webkit-scrollbar {
     width: $width;
   }
