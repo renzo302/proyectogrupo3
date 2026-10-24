@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&display=swap");
+
 * {
   box-sizing: border-box;
 }
@@ -66,7 +67,7 @@ h3 {
 }
 
 :root {
-  /* Paleta brutalista — negro crudo + acentos de póster (magenta, cian, amarillo, lima) */
+  /* Paleta brutalista */
   --color-primary: #ff2d78;
   --color-primary-strong: #ff0055;
   --color-secondary: #00e5ff;
@@ -79,16 +80,20 @@ h3 {
   --color-text: #f5f5f0;
   --color-muted: #9a9a92;
   --color-border: #f5f5f0;
-  /* Sombras duras, sin difuminado */
+
+  /* Sombras duras */
   --shadow-soft: 10px 10px 0 rgba(0, 0, 0, 0.85);
   --shadow-card: 7px 7px 0 rgba(0, 0, 0, 0.85);
-  /* Radios a cero: sin curvas */
+
+  /* Radios a cero */
   --radius-sm: 0;
   --radius-md: 0;
   --radius-lg: 0;
   --radius-xl: 0;
+
   --container-width: 1200px;
   --border-width: 3px;
+
   --font-display: 'Archivo Black', 'Arial Black', Impact, sans-serif;
   --font-body: 'Space Mono', 'Courier New', monospace;
 }
@@ -124,10 +129,16 @@ h3 {
   letter-spacing: 0.03em;
   line-height: 1;
   border: var(--border-width) solid var(--color-text);
-  transition: transform 0.15s linear, box-shadow 0.15s linear, background 0.15s linear;
+
+  /* TRANSICIÓN */
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
 
 .home-btn:hover {
+  /* TRANSFORMACIÓN */
   transform: translate(-3px, -3px);
 }
 
@@ -219,7 +230,9 @@ h3 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04rem;
-  transition: color 0.15s linear;
+
+  /* TRANSICIÓN */
+  transition: color 0.25s ease;
 }
 
 .home-nav a::after {
@@ -232,7 +245,9 @@ h3 {
   background: var(--color-accent);
   transform: scaleX(0);
   transform-origin: left;
-  transition: transform 0.15s linear;
+
+  /* TRANSICIÓN */
+  transition: transform 0.25s ease;
 }
 
 .home-nav a:hover,
@@ -242,6 +257,7 @@ h3 {
 
 .home-nav a:hover::after,
 .home-nav a.is-active::after {
+  /* TRANSFORMACIÓN */
   transform: scaleX(1);
 }
 
@@ -270,7 +286,7 @@ h3 {
 
 .search-container {
   position: relative;
-  margin-right: 20px; /* Separa el buscador de los botones */
+  margin-right: 20px;
 }
 
 .search-box {
@@ -279,12 +295,20 @@ h3 {
   background-color: transparent;
   border: 2px solid #ff2d78;
   padding: 8px 12px;
-  transition: all 0.3s ease;
+
+  /* TRANSICIÓN */
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
 }
 
 .search-box:focus-within {
-  border-color: #fceb00; /* Cambia a amarillo neón al hacer clic */
+  border-color: #fceb00;
   box-shadow: 0 0 8px rgba(252, 235, 0, 0.5);
+
+  /* TRANSFORMACIÓN */
+  transform: translateY(-2px);
 }
 
 .search-icon {
@@ -346,7 +370,11 @@ h3 {
 .home-footer__columns a {
   color: var(--color-muted);
   font-family: var(--font-body);
-  transition: color 0.15s linear;
+
+  /* TRANSICIÓN */
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .home-footer__columns a:hover,
@@ -377,44 +405,111 @@ h3 {
     flex-direction: column;
   }
 }
+
 @media (max-width: 640px) {
   .home-footer__columns {
     grid-template-columns: 1fr;
   }
+
   .home-footer__bottom {
     flex-direction: column;
     align-items: flex-start;
   }
 }
+
+
+/* =========================================================
+   ANIMACIONES DE OFERTAS
+   ========================================================= */
+
 @keyframes popIn {
   from {
     opacity: 0;
-    transform: translateY(14px);
+    transform: translateY(22px) scale(0.97);
   }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ofertasTitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(-18px) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ofertasSubtitleIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
+@keyframes badgePulse {
+  0%,
+  100% {
+    transform: rotate(5deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(5deg) scale(1.08);
+  }
+}
+
+@keyframes priceHighlight {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+}
+
+
+/* =========================================================
+   SECCIÓN OFERTAS
+   ========================================================= */
+
 .ofertas-main {
   padding: 3rem 0 5rem;
   min-height: 60vh;
 }
+
 .ofertas-main::-webkit-scrollbar {
   width: 8px;
 }
+
 .ofertas-main::-webkit-scrollbar-track {
   background: var(--color-surface);
 }
+
 .ofertas-main::-webkit-scrollbar-thumb {
   background: var(--color-primary);
   border-radius: 0;
 }
+
 .ofertas-main::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary-strong);
 }
 
+
 /* --- Header de Ofertas --- */
+
 .ofertas-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -425,16 +520,24 @@ h3 {
   letter-spacing: -0.02em;
   margin-bottom: 0.5rem;
   color: #fff;
-  -webkit-text-stroke: 1px var(--color-text); /* Mantiene el estilo de borde de texto */
+  -webkit-text-stroke: 1px var(--color-text);
+
+  /* ANIMACIÓN */
+  animation: ofertasTitleIn 0.65s ease-out both;
 }
 
 .ofertas-subtitle {
   font-family: var(--font-body);
   color: var(--color-muted);
   font-size: 1.1rem;
+
+  /* ANIMACIÓN */
+  animation: ofertasSubtitleIn 0.65s ease-out 0.15s both;
 }
 
+
 /* --- Grid de Ofertas --- */
+
 .ofertas-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -442,56 +545,82 @@ h3 {
   margin-bottom: 2rem;
 }
 
+
 /* --- Tarjeta de Juego --- */
+
 .game-card {
   background: var(--color-surface);
   border-radius: 0;
   border: var(--border-width) solid var(--color-border);
   overflow: hidden;
-  transition: transform 0.15s linear, box-shadow 0.15s linear, border-color 0.15s linear;
+
+  /* TRANSICIONES */
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+
   display: flex;
   flex-direction: column;
   min-height: 100%;
-  animation: popIn 0.25s ease-out forwards;
+
+  /* ANIMACIÓN */
+  animation: popIn 0.45s ease-out both;
 }
+
 .game-card:nth-child(1) {
-  animation-delay: 0.02s;
+  animation-delay: 0.05s;
 }
+
 .game-card:nth-child(2) {
-  animation-delay: 0.04s;
+  animation-delay: 0.10s;
 }
+
 .game-card:nth-child(3) {
-  animation-delay: 0.06s;
+  animation-delay: 0.15s;
 }
+
 .game-card:nth-child(4) {
-  animation-delay: 0.08s;
+  animation-delay: 0.20s;
 }
+
 .game-card:nth-child(5) {
-  animation-delay: 0.1s;
+  animation-delay: 0.25s;
 }
+
 .game-card:nth-child(6) {
-  animation-delay: 0.12s;
+  animation-delay: 0.30s;
 }
+
+
+/* TRANSFORMACIÓN AL PASAR EL MOUSE */
 
 .game-card:hover {
-  transform: translate(-6px, -6px);
-  box-shadow: 10px 10px 0 var(--color-primary);
+  transform: translate(-6px, -6px) scale(1.015);
+  box-shadow: 12px 12px 0 var(--color-primary);
+  border-color: var(--color-primary);
 }
 
+
 /* --- Imagen de la Tarjeta --- */
+
 .game-card__image {
   position: relative;
   overflow: hidden;
   aspect-ratio: 16/9;
   border-bottom: var(--border-width) solid var(--color-border);
 }
+
 .game-card__image::after {
   content: "";
   position: absolute;
   inset: 0;
   background: rgba(255, 45, 120, 0.12);
   opacity: 0;
-  transition: opacity 0.15s linear;
+
+  /* TRANSICIÓN */
+  transition: opacity 0.35s ease;
+
   z-index: 1;
 }
 
@@ -499,18 +628,28 @@ h3 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.25s linear;
+
+  /* TRANSICIÓN */
+  transition:
+    transform 0.45s ease,
+    filter 0.45s ease;
 }
 
+
+/* TRANSFORMACIÓN DE LA IMAGEN */
+
 .game-card:hover .game-card__image img {
-  transform: scale(1.04);
+  transform: scale(1.08) rotate(0.5deg);
+  filter: saturate(1.08);
 }
 
 .game-card:hover .game-card__image::after {
   opacity: 1;
 }
 
-/* Etiqueta de Descuento */
+
+/* --- Etiqueta de Descuento --- */
+
 .game-discount-badge {
   position: absolute;
   top: 1rem;
@@ -528,9 +667,14 @@ h3 {
   box-shadow: 4px 4px 0 #000;
   transform: rotate(5deg);
   z-index: 2;
+
+  /* ANIMACIÓN */
+  animation: badgePulse 1.8s ease-in-out infinite;
 }
 
+
 /* --- Contenido de la Tarjeta --- */
+
 .game-card__info {
   display: flex;
   flex: 1;
@@ -545,10 +689,12 @@ h3 {
   color: var(--color-text);
 }
 
+
 /* --- Precios --- */
+
 .game-pricing {
   display: flex;
-  justify-content: space-between; /* Separa los precios  */
+  justify-content: space-between;
   align-items: center;
   margin-top: auto;
   padding-top: 0.8rem;
@@ -562,20 +708,43 @@ h3 {
   color: var(--color-muted);
   text-decoration: line-through;
   text-decoration-thickness: 2px;
-  text-decoration-color: var(--color-primary); /* Línea de tachado rosa */
+  text-decoration-color: var(--color-primary);
 }
 
 .price-new {
   font-family: var(--font-display);
   font-size: 1.6rem;
   letter-spacing: -0.02em;
-  color: var(--color-success); /* Verde neón para el precio final */
+  color: var(--color-success);
+
+  /* Necesario para aplicar transform */
+  display: inline-block;
+
+  /* ANIMACIÓN */
+  animation: priceHighlight 1.6s ease-in-out infinite;
 }
 
-/* Botón VER OFERTA */
+
+/* --- Botón VER OFERTA --- */
+
 .game-card__info .home-btn {
   width: 100%;
+
+  /* TRANSICIÓN */
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
 }
+
+.game-card__info .home-btn:hover {
+  transform: translate(-4px, -4px);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
 
 @media (max-width: 1024px) {
   .ofertas-grid {
@@ -583,32 +752,40 @@ h3 {
     gap: 1.5rem;
   }
 }
+
 @media (max-width: 768px) {
   .ofertas-main {
     padding: 2rem 0 3rem;
   }
+
   .ofertas-header h1 {
     font-size: 2.2rem;
   }
+
   .ofertas-subtitle {
     font-size: 1rem;
   }
 }
+
 @media (max-width: 640px) {
   .ofertas-main {
     padding: 1.5rem 0 3rem;
   }
+
   .ofertas-grid {
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
+
   .ofertas-header h1 {
     font-size: 1.8rem;
   }
+
   .game-card__image {
     aspect-ratio: 16/10;
   }
 }
+
 @media (max-width: 480px) {
   .game-discount-badge {
     top: 0.6rem;
@@ -616,15 +793,40 @@ h3 {
     font-size: 1rem;
     padding: 0.2rem 0.6rem;
   }
+
   .game-card__info {
     padding: 0.9rem;
   }
+
   .game-card__info h3 {
     font-size: 1.1rem;
   }
+
   .price-new {
     font-size: 1.4rem;
   }
 }
+
+
+/* =========================================================
+   ACCESIBILIDAD
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .ofertas-header h1,
+  .ofertas-subtitle,
+  .game-card,
+  .game-discount-badge,
+  .price-new {
+    animation: none;
+  }
+
+  .game-card,
+  .game-card__image img,
+  .game-card__image::after {
+    transition: none;
+  }
+}
+
 
 /*# sourceMappingURL=ofertas.css.map */
