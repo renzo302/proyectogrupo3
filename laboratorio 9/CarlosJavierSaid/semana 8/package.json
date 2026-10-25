@@ -1,0 +1,21 @@
+{
+ "private": true,
+ "scripts": {
+  "build:sass": "sass --style=expanded --embed-sources src/scss/main.scss dist/css/sass.css",
+  "build:less": "lessc --math=parens --source-map --source-map-include-source src/less/main.less dist/css/less.css",
+  "build": "npm run build:sass && npm run build:less",
+  "versions": "sass --version && lessc --version"
+ },
+ "name": "semana-8",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js",
+ "keywords": [],
+ "author": "",
+ "license": "ISC",
+ "type": "commonjs",
+ "devDependencies": {
+  "less": "4.9.1",
+  "sass": "1.105.1"
+ }
+}
