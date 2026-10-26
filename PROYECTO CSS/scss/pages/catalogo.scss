@@ -72,6 +72,31 @@
   gap: 1.5rem;
 }
 
+/* --- Animación de Entrada (Compatibilidad entre Navegadores) --- */
+/* Prefijo para navegadores basados en WebKit (Chrome, Safari, Edge antiguos) */
+@-webkit-keyframes entradaTarjeta {
+  0% { 
+    opacity: 0; 
+    -webkit-transform: translateY(40px); 
+  }
+  100% { 
+    opacity: 1; 
+    -webkit-transform: translateY(0); 
+  }
+}
+
+/* Estándar para navegadores modernos */
+@keyframes entradaTarjeta {
+  0% { 
+    opacity: 0; 
+    transform: translateY(40px); 
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
 /* --- Tarjeta del Catálogo (Flexbox anidado) --- */
 .catalogo-card {
   display: flex;
@@ -83,6 +108,16 @@
   background: var(--color-surface);
   transition: transform v.$transition-fast, border-color v.$transition-fast, box-shadow v.$transition-fast;
   box-shadow: var(--shadow-card);
+
+  /* Propiedades de la animación web */
+  -webkit-animation-name: entradaTarjeta;
+  animation-name: entradaTarjeta;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .catalogo-card:hover {

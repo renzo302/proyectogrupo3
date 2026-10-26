@@ -464,6 +464,29 @@ h3 {
   gap: 1.5rem;
 }
 
+/* --- Animación de Entrada (Compatibilidad entre Navegadores) --- */
+/* Prefijo para navegadores basados en WebKit (Chrome, Safari, Edge antiguos) */
+@-webkit-keyframes entradaTarjeta {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+  }
+}
+/* Estándar para navegadores modernos */
+@keyframes entradaTarjeta {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 /* --- Tarjeta del Catálogo (Flexbox anidado) --- */
 .catalogo-card {
   display: flex;
@@ -475,6 +498,15 @@ h3 {
   background: var(--color-surface);
   transition: transform 0.15s linear, border-color 0.15s linear, box-shadow 0.15s linear;
   box-shadow: var(--shadow-card);
+  /* Propiedades de la animación web */
+  -webkit-animation-name: entradaTarjeta;
+  animation-name: entradaTarjeta;
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .catalogo-card:hover {
@@ -483,7 +515,7 @@ h3 {
   box-shadow: 9px 9px 0 var(--color-primary);
 }
 
-/* Colores de Hover por Categoría (NUEVO) */
+/* Colores de Hover por Categoría usando mixins */
 .catalogo-card[data-category=rpg]:hover {
   border-color: #9d00ff;
   box-shadow: 9px 9px 0 #9d00ff;
@@ -583,7 +615,7 @@ h3 {
   color: var(--color-text);
 }
 
-/* --- Paginación (NUEVO) --- */
+/* --- Paginación --- */
 .catalogo-pagination {
   display: flex;
   justify-content: center;
@@ -625,7 +657,7 @@ h3 {
   font-weight: bold;
 }
 
-/* --- Newsletter (NUEVO) --- */
+/* --- Newsletter --- */
 .catalogo-newsletter {
   background: var(--color-surface-soft);
   border: var(--border-width) solid var(--color-border);
@@ -662,7 +694,7 @@ h3 {
   border-color: var(--color-accent);
 }
 
-/* Dispositivos móviles */
+/* --- Responsive --- */
 @media (max-width: 768px) {
   .catalogo-main {
     padding: 2rem 0 3rem;
@@ -675,7 +707,6 @@ h3 {
     padding: 0.5rem 1rem;
   }
 }
-/* Tabletas y pantallas medianas */
 @media (min-width: 769px) and (max-width: 1024px) {
   .catalogo-grid {
     gap: 1rem;
